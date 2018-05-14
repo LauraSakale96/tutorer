@@ -8,6 +8,8 @@
       <div class="jumbotron">
         <h1>{{ $lesson->name }}</h1>
         <p class="lead">{{ $lesson->description}}</p>
+        <p class="lead">{{ $lesson->lessondate}}</p>
+
       
       </div>
 
@@ -39,7 +41,7 @@
                   Dzēst
               </a>
 
-              <form id="delete-form" action="{{ route('lessons.destroy',[$subject->id]) }}" 
+              <form id="delete-form" action="{{ route('lessons.destroy',[$lesson->id]) }}" 
                 method="POST" style="display: none;">
                         <input type="hidden" name="_method" value="delete">
                         {{ csrf_field() }}
