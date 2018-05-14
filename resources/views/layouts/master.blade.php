@@ -73,24 +73,23 @@
               
 
             <li class="nav-item">
-                <a class="nav-link" href="profiles">
+                <a class="nav-link" href="profils">
                   <span data-feather="users"></span>
                   Profils
                 </a>
               </li>
 
-              @if(Auth::user()->role == 'skolens')
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="subjects">
                   <span data-feather="book"></span>
                   Priekšmeti
                 </a>
               </li>
             
-            @endif
+            
 
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="lessons">
                   <span data-feather="file"></span>
                   Nodarbība
                 </a>
@@ -98,7 +97,7 @@
 
               @if(Auth::user()->role == 'skolotajs')
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="student-lists">
                   <span data-feather="users"></span>
                   Skolēnu saraksts
                 </a>
@@ -108,7 +107,7 @@
 
                 @if(Auth::user()->role == 'skolotajs')
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="materials">
                   <span data-feather="file-text"></span>
                   Mācību materiāli
                 </a>
@@ -117,28 +116,28 @@
             @endif
 
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="attedances">
                   <span data-feather="check-square"></span>
                   Apmeklējums
                 </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="progreses">
                   <span data-feather="award"></span>
                   Progress
                 </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="diagnoses">
                   <span data-feather="activity"></span>
                   Diagnoze
                 </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="mail">
                   <span data-feather="mail"></span>
                   Pasts
                 </a>
@@ -149,16 +148,9 @@
         </ul>
 
       </div>
+      
     </div>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../../../dist/js/bootstrap.min.js"></script>
-
+    
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
@@ -178,17 +170,19 @@
 </nav>
 </div>
 
-        <body>
-    
-
-    
-
-        <main class="py-4">
+<body>
+<main class="py-4">
             @yield('nav-bar')
             @yield('content')
             
             
         </main>
-    </div>
-</body>
+      </body>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
 </html>
