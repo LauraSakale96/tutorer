@@ -73,14 +73,14 @@
               
 
             <li class="nav-item">
-                <a class="nav-link" href="profils">
+                <a class="nav-link" href="http://tutorer.dev/profils">
                   <span data-feather="users"></span>
                   Profils
                 </a>
               </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="subjects">
+                <a class="nav-link" href="http://tutorer.dev/subjects">
                   <span data-feather="book"></span>
                   Priekšmeti
                 </a>
@@ -89,7 +89,7 @@
             
 
               <li class="nav-item">
-                <a class="nav-link" href="lessons">
+                <a class="nav-link" href="http://tutorer.dev/lessons">
                   <span data-feather="file"></span>
                   Nodarbība
                 </a>
@@ -97,7 +97,7 @@
 
               @if(Auth::user()->role == 'skolotajs')
             <li class="nav-item">
-                <a class="nav-link" href="student-lists">
+                <a class="nav-link" href="http://tutorer.dev/student-lists">
                   <span data-feather="users"></span>
                   Skolēnu saraksts
                 </a>
@@ -107,7 +107,7 @@
 
                 @if(Auth::user()->role == 'skolotajs')
             <li class="nav-item">
-                <a class="nav-link" href="materials">
+                <a class="nav-link" href="http://tutorer.dev/materials">
                   <span data-feather="file-text"></span>
                   Mācību materiāli
                 </a>
@@ -116,28 +116,28 @@
             @endif
 
               <li class="nav-item">
-                <a class="nav-link" href="attedances">
+                <a class="nav-link" href="http://tutorer.dev/attendances">
                   <span data-feather="check-square"></span>
                   Apmeklējums
                 </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="progreses">
+                <a class="nav-link" href="http://tutorer.dev/progreses">
                   <span data-feather="award"></span>
                   Progress
                 </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="diagnoses">
+                <a class="nav-link" href="http://tutorer.dev/diagnoses">
                   <span data-feather="activity"></span>
                   Diagnoze
                 </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="mail">
+                <a class="nav-link" href="http://tutorer.dev/posts">
                   <span data-feather="mail"></span>
                   Pasts
                 </a>
