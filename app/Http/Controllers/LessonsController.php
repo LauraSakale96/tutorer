@@ -17,7 +17,7 @@ class LessonsController extends Controller
     public function index()
     {
         if(Auth::check()){
-        $lessin=Lesson::where('user_id', Auth::user()->id)->get();
+        $lessons=Lesson::where('user_id', Auth::user()->id)->get();
         return view('lessons.index', ['lessons'=>$lessons]);
         }
         
@@ -52,7 +52,7 @@ class LessonsController extends Controller
             $lesson = Lesson::create([
                 'name' => $request->input('name'),
                 'description' => $request->input('description'),
-                'lesson-date'=>$request->input('lesson-date'),
+                'lessondate'=>$request->input('lessondate'),
                 'file'=>$request->input('file'),
                 'subject_id' => $request->input('subject_id'),
                 'user_id' => Auth::user()->id
@@ -108,7 +108,7 @@ class LessonsController extends Controller
         ->update([
                 'name'=> $request->input('name'),
                 'description'=> $request->input('description'),
-                'lesson-date'=>$request->input('lesson-date'),
+                'lessondate'=>$request->input('lessondate'),
                 'file'=>$request->input('file')
         ]);
         if($lessonUpdate){

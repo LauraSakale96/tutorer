@@ -39,30 +39,7 @@
                         </textarea>
                 </div>
 
-                <div class="form-group">
-                <label for="lesson-date">Nodarbības datums<span class="required">*</span></label>
-                <input placeholder="Ievadiet nodarbības nosaukumu"
-                        id="lesson-date"
-                        required
-                        name="lesson-date"
-                        spellcheck="false"
-                        class="form-control"
-                        value="{{ $lesson->name }}"/>
-                        
-                </div>
-
-                <div class="form-group">
-                <label for="lesson-file">Pievienot nodarbības materiālus</span></label>
-                <input placeholder="Ievadiet nodarbības nosaukumu"
-                        id="lesson-file"
-                        required
-                        name="file"
-                        spellcheck="false"
-                        class="form-control"
-                        value="{{ $lesson->name }}"/>
-                        
-                </div>
-
+              
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary"
                         value="Ievadīt"/>

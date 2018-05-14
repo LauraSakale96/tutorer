@@ -16,7 +16,7 @@ class CreateLessonsTable extends Migration
         Schema::create('lesson', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->date('lesson-date');
+            $table->date('lessondate');
             $table->longText('description')->nullable();
             $table->string('file')->nullable();
             $table->integer('user_id')->unsigned();

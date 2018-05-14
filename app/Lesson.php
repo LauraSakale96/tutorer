@@ -11,7 +11,7 @@ class Lesson extends Model
         'description',
         'subject_id',
         'user_id',
-        'lesson-date',
+        'lessondate',
         'file',
     ];
     public function user(){
