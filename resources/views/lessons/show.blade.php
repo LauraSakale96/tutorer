@@ -1,14 +1,21 @@
 @extends('layouts.master')
 
 @section('content')
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 
-<div class="col-sm-9 col-md-9 col-lg-9 pull-left">
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
+  </head>
+
+<div class="col-sm-9 col-md-9 col-lg-9 pull-center">
 
       
       <div class="jumbotron">
         <h1>{{ $lesson->name }}</h1>
         <p class="lead">{{ $lesson->description}}</p>
         <p class="lead">{{ $lesson->lessondate}}</p>
+      
 
       
       </div>

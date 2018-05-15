@@ -1,9 +1,17 @@
 @extends('layouts.master')
 
 @section('content')
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 
-<div class="col-sm-9 col-md-9 col-lg-9 pull-left" style="background: white;">
-<hi>Pievieno jaunu priekšmetu!</h1>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+</head>
+<div class="col-sm-9 col-md-9 col-lg-9 pull-left" style=""background: white;>
+<h1>Pievieno jaunu priekšmetu</h1>
 
       
       <!-- Example row of columns -->
@@ -17,7 +25,7 @@
             
             <div class="form-group">
                 <label for="subject-name">Nosaukums<span class="required">*</span></label>
-                <input placeholder="Ievadiet mācību priekšmeta nosaukumu"
+                <input placeholder="Ievadiet priekšmeta nosaukumu"
                         id="subject-name"
                         required
                         name="name"
@@ -28,9 +36,10 @@
                         
                 </div>
 
+              
                 <div class="form-group">
-                <label for="subject-content">Apraksts<span class="required">*</span></label>
-                <textarea placeholder="Ievadiet mācību priekšmeta aprakstu"
+                <label for="subject-content">Apraksts</label>
+                <textarea 
                         style="resize: vertical"
                         id="subject-content"
                         name="description"
@@ -39,9 +48,11 @@
                         
                         </textarea>
                 </div>
+
+                
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary"
-                        value="Pievienot"/>
+                        value="Ievadīt"/>
                         </div>
                         </form>
        </div>
@@ -50,26 +61,13 @@
 </div>
 
 <div class="col-sm-3 col-md-3 col-lg-3 pull-right">
-         <!-- <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div>
-          <div class="sidebar-module">-->
+         
           <div class="sidebar-module">
-            <h4>Izvēlieties, savu rīcību</h4>
+            <h4>Izvēlies savu darbību</h4>
             <ol class="list-unstyled">
-              <li><a href="/subjects">Apskatīt visus savus mācību priekšmetus</a></li>
-              
-              
+              <li><a href="/lessons">Apskatīt visu manu priekšmetu sarakstu</a></li>
             </ol>
           </div>
-          <!--<div class="sidebar-module">
-            <h4>Memebers of the Party</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">March 2014</a></li>
-              
-            </ol>
-          </div>-->
-          
+           
         </div>
     @endsection

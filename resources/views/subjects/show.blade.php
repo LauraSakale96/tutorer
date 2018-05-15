@@ -1,30 +1,36 @@
 @extends('layouts.master')
 
 @section('content')
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 
-<div class="col-sm-9 col-md-9 col-lg-9 pull-left">
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
+  </head>
+
+<div class="col-sm-6 col-md-6 col-lg-6 pull-center">
 
       
       <div class="jumbotron">
         <h1>{{ $subject->name }}</h1>
         <p class="lead">{{ $subject->description}}</p>
+        
       
       </div>
 
      
 </div>
-
 <div class="col-sm-3 col-md-3 col-lg-3 pull-right">
          
           <div class="sidebar-module">
-            <h4>Izvēlies savu rīcību!</h4>
+            <h4>Izvēlies savu darbību</h4>
             <ol class="list-unstyled">
-              <li><a href="/subjects/{{$subject->id}}/edit">Rediģēt</a></li>
+            <li><a href="/subjects/{{$subject->id}}/edit">Rediģēt</a></li>
               <li><a href="/lessons/create/{{$subject->id}}">Pievienot nodarbību</a></li>
               <li><a href="/subjects">Saraksts ar visiem priekšmetiem</a></li>
-              <li><a href="/subject/create">Pievienot jaunu priekšmetu</a></li>
-              
+              <li><a href="/subject/create">Pievienot jaunu priekšmetu</a></li>              
               <br/>
+
               <li>
               <a   
               href="#"
@@ -49,10 +55,9 @@
               
               
               </li>
-            
             </ol>
           </div>
-         
-          
+           
         </div>
+
     @endsection
