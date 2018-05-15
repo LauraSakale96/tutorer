@@ -24,7 +24,7 @@
 
             
             <div class="form-group">
-                <label for="lesson-name">Nosaukums<span class="required">*</span></label>
+                <label for="lesson-name">Nodarbības nosaukums<span class="required">*</span></label>
                 <input placeholder="Ievadiet nodarbības nosaukumu"
                         id="lesson-name"
                         required
