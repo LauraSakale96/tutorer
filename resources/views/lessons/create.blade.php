@@ -44,16 +44,14 @@
                     spellcheck="false"
                         class="form-control"
                     />
-                 </div>
-
+                    
                 <script type="text/javascript">
-
                     $('.date').datepicker({  
-
                     format: 'dd-mm-yyyy'
                      });  
-
                 </script>
+                 </div>
+
 
                 @if( $subjects == null)
                 <input
@@ -61,11 +59,8 @@
                  type="hidden"
                         
                         name="subject_id"
-                        value="{{$subject_id}}"
-                        
-                       
-                        />
-                        
+                        value="{{$subject_id}}"                     
+                        />                      
                 </div>
                 @endif
 
@@ -77,6 +72,7 @@
                     <option value="{{$subject->id}}">{{$subject->name}}</option>
                     @endforeach
                 </select>
+
                 </div>
                 @endif
                 <div class="form-group">
@@ -90,6 +86,11 @@
                         
                         </textarea>
                 </div>
+
+                <div class="form-group">
+                <label for="lesson-content">Nodarbības materiāls</label>
+                
+                
 
                 
                 <div class="form-group">

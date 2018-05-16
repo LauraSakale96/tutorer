@@ -79,7 +79,7 @@
 
                         @if(Auth::user()->role == 'skolotajs')
                         <li class="nav-item">
-                            <a class="nav-link" href="http://tutorer.dev/student-lists">
+                            <a class="nav-link" href="http://tutorer.dev/studentlists">
                             <span data-feather="users"></span>
                             Skolēnu saraksts
                             </a>
@@ -89,7 +89,7 @@
 
                             @if(Auth::user()->role == 'skolotajs')
                         <li class="nav-item">
-                            <a class="nav-link" href="http://tutorer.dev/materials">
+                            <a class="nav-link" href="http://tutorer.dev/file">
                             <span data-feather="file-text"></span>
                             Mācību materiāli
                             </a>

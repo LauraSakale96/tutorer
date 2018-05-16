@@ -22,6 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware(['auth'])->group( function(){
     Route::resource('subjects', 'SubjectsController');
     Route::resource('lessons', 'LessonsController');
-
+    Route::resource('studentlists', 'StudentlistsController');
+    
+    Route::get('file','FilesController@create');
+    Route::post('file','FilesController@store');
 
 });
