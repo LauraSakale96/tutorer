@@ -16,7 +16,11 @@ class FilesController extends Controller
      */
     public function index()
     {
-      
+        if(Auth::check()){
+            $files=File::where('user_id', Auth::user()->id)->get();
+            return view('file.index', ['files'=>$files]);
+            }
+            return view('auth.login');
     }
 
     /**
@@ -26,7 +30,7 @@ class FilesController extends Controller
      */
     public function create(File $file)
     {
-        return view('files.create', ['file'=>$file]);
+        return view('file.create', ['file'=>$file]);
         
     }
 
@@ -54,7 +58,7 @@ class FilesController extends Controller
                         foreach($request->file('filename') as $file)
                         {
                             $name=$file->getClientOriginalName();
-                            $file->move(public_path().'/files/', $name);  
+                            $file->move(public_path().'/file/', $name);  
                             $data[] = $name;  
                             
                         }
@@ -70,7 +74,7 @@ class FilesController extends Controller
                     $file->save();
                     
             
-                    return back()->with('success', 'Your files has been successfully added');
+                    return back()->with('success', 'Jūsu fails ir veiksmīgi pievienots!');
                     }
     }
 
@@ -82,7 +86,10 @@ class FilesController extends Controller
      */
     public function show(File $file)
     {
-       
+        $file = File::find($file->id );
+        
+            
+               return view( 'file.show', ['file'=>$file]);
     }
 
     /**
