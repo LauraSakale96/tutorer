@@ -9,6 +9,16 @@ use Illuminate\Support\Facades\Auth;
 
 class LessonsController extends Controller
 {
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => 'required|string|max:255',
+            'description' => 'string|max:255',
+            'file.*' => 'mimes:doc,pdf,docx,zip',
+            'lessondate' => 'required|date|max:255',
+            
+        ]);
+    }
      /**
      * Display a listing of the resource.
      *

@@ -8,6 +8,19 @@ use Illuminate\Support\Facades\Auth;
 
 class TeacherprofilesController extends Controller
 {
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'subject' => 'required|string|max:255',
+            'education' => 'string|max:255|',
+            'description' =>'string|max:255',
+            'image' => 'mimes:jpeg,bmp,png',
+            
+        ]);
+    }
      /**
      * Display a listing of the resource.
      *

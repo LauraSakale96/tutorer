@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\Auth;
 
 class SubjectsController extends Controller
 {
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => 'required|string|max:255',
+            'description' => 'required|longText',
+        ]);
+    }
     /**
      * Display a listing of the resource.
      *

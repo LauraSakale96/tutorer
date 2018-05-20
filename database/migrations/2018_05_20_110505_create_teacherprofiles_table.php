@@ -19,7 +19,7 @@ class CreateTeacherprofilesTable extends Migration
             $table->string('lastname');
             $table->string('subject');
             $table->string('education')->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('image')->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
