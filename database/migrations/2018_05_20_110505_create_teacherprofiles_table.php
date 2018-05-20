@@ -13,14 +13,14 @@ class CreateTeacherprofilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('teacherprofile', function (Blueprint $table) {
+        Schema::create('teacherprofiles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('lastname');
             $table->string('subject');
             $table->string('education')->nullable();
             $table->longText('description')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image')->default('default.jpg');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
 
@@ -35,6 +35,6 @@ class CreateTeacherprofilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teacherprofile');
+        Schema::dropIfExists('teacherprofiles');
     }
 }

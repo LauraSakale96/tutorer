@@ -13,14 +13,14 @@ class CreateStudentprofilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('studentprofile', function (Blueprint $table) {
+        Schema::create('studentprofiles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('lastname');
             $table->integer('age');
             $table->string('school')->nullable();
             $table->longText('description')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image')->default('default.jpg');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
@@ -34,6 +34,6 @@ class CreateStudentprofilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('studentprofile');
+        Schema::dropIfExists('studentprofiles');
     }
 }

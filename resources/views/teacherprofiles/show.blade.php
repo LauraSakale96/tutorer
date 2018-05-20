@@ -13,9 +13,11 @@
       
       <div class="jumbotron">
         <h1>{{ $teacherprofile->name }}  {{$teacherprofile->lastname}}</h1>
+        <img src="/uploads/image/default.jpg" style="width:150px; height:150px; float:right; border-radius:50%; margin-right:25px;">
         <p class="lead">Priekšmets/-i, kuru pasniedz: {{ $teacherprofile->subject}}</p>
         <p class="lead">Izglītība: {{ $teacherprofile->education}}</p>
         <p class="lead">Apraksts: {{ $teacherprofile->description}}</p>
+        
        
     
       </div>

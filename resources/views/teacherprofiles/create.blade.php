@@ -22,7 +22,13 @@
          <form method="post" action="{{ route('teacherprofiles.store')}}">
             {{ csrf_field()}}
 
-            
+            <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <img src="/uploads/image/default.jpg" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
+           
+        </div>
+    </div>
+    
             <div class="form-group">
                 <label for="teacher-name">Vārds<span class="required">*</span></label>
                 <input placeholder="Ievadiet savu vārdu"
@@ -86,7 +92,7 @@
                         
                         </textarea>
                 </div>
-
+              
                 
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary"
