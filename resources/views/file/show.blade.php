@@ -13,6 +13,7 @@
       
       <div class="jumbotron">
         <h1>{{ $file->filename }}</h1>
+        
      
       </div>
 

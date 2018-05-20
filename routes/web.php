@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware(['auth'])->group( function(){
+    Route::resource('studentprofiles', 'StudentprofilesController');
+    Route::resource('teacherprofiles', 'TeacherprofilesController');
     Route::resource('subjects', 'SubjectsController');
     Route::resource('lessons', 'LessonsController');
     Route::resource('studentlists', 'StudentlistsController');

@@ -58,7 +58,7 @@ class FilesController extends Controller
                         foreach($request->file('filename') as $file)
                         {
                             $name=$file->getClientOriginalName();
-                            $file->move(public_path().'/file/', $name);  
+                            $file->move(public_path().'/files/', $name);  
                             $data[] = $name;  
                             
                         }
@@ -86,7 +86,7 @@ class FilesController extends Controller
      */
     public function show(File $file)
     {
-        $file = File::find($file->id );
+      // $file = File::find($file->id );
         
             
                return view( 'file.show', ['file'=>$file]);

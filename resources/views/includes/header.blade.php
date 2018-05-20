@@ -53,13 +53,24 @@
                             Sākums
                             </a>
                         </li>
-
+                        @if(Auth::user()->role == 'skolotajs')
                         <li class="nav-item">
-                            <a class="nav-link" href="http://tutorer.dev/profils">
+                            <a class="nav-link" href="http://tutorer.dev/teacherprofiles">
+                            <span data-feather="file-text"></span>
+                            Profils
+                            </a>
+                        </li>
+
+                        @endif
+
+                        @if(Auth::user()->role == 'skolens')
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://tutorer.dev/studentprofiles">
                             <span data-feather="users"></span>
                             Profils
                             </a>
                         </li>
+                        @endif
 
                         <li class="nav-item">
                             <a class="nav-link" href="http://tutorer.dev/subjects">

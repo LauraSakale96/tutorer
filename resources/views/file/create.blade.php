@@ -35,6 +35,7 @@
           <div class="input-group-btn"> 
             <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Pievienot</button>
           </div>
+          
         </div>
         <div class="clone hide">
           <div class="control-group input-group" style="margin-top:10px">
