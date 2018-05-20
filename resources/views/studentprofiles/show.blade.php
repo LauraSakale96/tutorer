@@ -12,7 +12,7 @@
 
       
       <div class="jumbotron">
-        <h1>{{ $studentprofile->name }}, {{$studentprofile->lastname}}</h1>
+        <h1>{{ $studentprofile->name }} {{$studentprofile->lastname}}</h1>
         <p class="lead">Vecums: {{ $studentprofile->age}}</p>
         <p class="lead">Mācību iestāde, kuru apmeklē: {{ $studentprofile->school}}</p>
         <p class="lead">Apraksts: {{ $studentprofile->description}}</p>
