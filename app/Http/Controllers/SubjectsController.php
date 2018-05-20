@@ -20,6 +20,8 @@ class SubjectsController extends Controller
         return view('subjects.index', ['subjects'=>$subjects]);
         }
         return view('auth.login');
+
+        
     }
 
     /**

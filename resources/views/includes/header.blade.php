@@ -63,7 +63,7 @@
 
                         @endif
 
-                        @if(Auth::user()->role == 'skolens')
+                        @if(Auth::user()->role == 'skolnieks')
                         <li class="nav-item">
                             <a class="nav-link" href="http://tutorer.dev/studentprofiles">
                             <span data-feather="users"></span>

@@ -28,7 +28,14 @@ class TeacherprofilesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-   
+    public function create()
+    {
+        
+        
+            
+               return view( 'teacherprofiles.create');
+    }
+
 
     /**
      * Store a newly created resource in storage.

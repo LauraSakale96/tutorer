@@ -29,6 +29,13 @@ class StudentprofilesController extends Controller
      * @return \Illuminate\Http\Response
      */
    
+    public function create()
+    {
+        
+        
+            
+               return view( 'studentprofiles.create');
+    }
 
     /**
      * Store a newly created resource in storage.

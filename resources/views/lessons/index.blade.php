@@ -10,7 +10,10 @@
 
 <div class="col-md-9 col-lg-9 col-md-offset-1 col-lg-offset-1">
     <div class="panel panel-primary ">
-    <div class="panel-heading">Nodarbība <a class="pull-right btn btn-primary btn-sm" href="/lessons/create">Pievieno nodarbību</a></div>
+    <div class="panel-heading">Nodarbība </div>
+    @if(Auth::user()->role == 'skolotajs')
+    <a class="pull-right btn btn-primary btn-sm" href="/lessons/create">Pievieno nodarbību</a></div>
+    @endif
     <div class="panel-body">
 
         <ul class="list-group">
