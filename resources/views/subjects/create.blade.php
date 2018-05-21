@@ -65,7 +65,7 @@
           <div class="sidebar-module">
             <h4>Izvēlies savu darbību</h4>
             <ol class="list-unstyled">
-              <li><a href="/lessons">Apskatīt visu manu priekšmetu sarakstu</a></li>
+              <li><a href="/subjects">Apskatīt visu manu priekšmetu sarakstu</a></li>
             </ol>
           </div>
            

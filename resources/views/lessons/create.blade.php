@@ -104,16 +104,13 @@
 </div>
 
 <div class="col-sm-3 col-md-3 col-lg-3 pull-right">
-         
-          <div class="sidebar-module">
-            <h4>Izvēlies savu darbību</h4>
-            <ol class="list-unstyled">
-              <li><a href="/lessons">Apskatīt visu manu nodarbību sarakstu</a></li>
-              
-              
-            </ol>
-          </div>
-          
-          
-        </div>
+
+ <div class="sidebar-module">
+   <h4>Izvēlies savu darbību</h4>
+   <ol class="list-unstyled">
+     <li><a href="/lessons">Apskatīt visu manu nodarbību sarakstu</a></li>
+   </ol>
+ </div>
+  
+</div>
     @endsection

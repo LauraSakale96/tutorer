@@ -15,7 +15,7 @@ class LessonsController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'string|max:255',
             'file.*' => 'mimes:doc,pdf,docx,zip',
-            'lessondate' => 'required|date|max:255',
+            'lessondate' => 'required|max:255',
             
         ]);
     }
@@ -65,7 +65,8 @@ class LessonsController extends Controller
                 'lessondate'=>$request->input('lessondate'),
                 'file'=>$request->input('file'),
                 'subject_id' => $request->input('subject_id'),
-                'user_id' => Auth::user()->id
+                'user_id' => Auth::user()->id,
+                
             ]);
             if($lesson){
                 return redirect()->route('lessons.show', ['lesson'=> $lesson->id])
