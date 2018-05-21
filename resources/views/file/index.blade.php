@@ -15,7 +15,7 @@
 
         <ul class="list-group">
         @foreach($files as $file)
-        <li class="list-group-item"> <a href="/files/{{$file->id}}">{{ $file->filename}}</a></li>
+        <li class="list-group-item"> <a href="/uploads/files/{{$file->filename}}">{{ $file->filename}}</a></li>
         @endforeach
         </ul>
     </div>

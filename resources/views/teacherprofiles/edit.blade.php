@@ -16,6 +16,16 @@
 
  
         <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <img src="/uploads/image/{{ $teacherprofile->image }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
+            <form enctype="multipart/form-data" action="/teacherprofiles" method="POST">
+                <label>Update Profile Image</label>
+                <input type="file" name="image">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            </form>
+        </div>
+    </div>
          <form method="post" action="{{ route('teacherprofiles.update', [$teacherprofile->id])}}">
             {{ csrf_field()}}
             <div class="form-group">

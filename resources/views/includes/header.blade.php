@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
 <div class="container">
+
     <a class="navbar-brand" href="{{ url('/') }}">
         {{ config('app.name', 'Tutorer') }}
     </a>
@@ -18,7 +19,7 @@
             
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
+                        {{ Auth::user()->name }} {{Auth::user()->lastname}} <span class="caret"></span>
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -41,9 +42,9 @@
 
 <nav class="sidenavbar">
     <div class="nav-bar">
-        <div class="container">
+        
             <div class="row">
-                <nav class="col-md-3 sidebar">
+                <nav class=" sidebar">
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
 
@@ -88,16 +89,7 @@
                             </a>
                         </li>
 
-                        @if(Auth::user()->role == 'skolotajs')
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://tutorer.dev/studentlists">
-                            <span data-feather="users"></span>
-                            Skolēnu saraksts
-                            </a>
-                        </li>
-
-                        @endif
-
+                    
                             @if(Auth::user()->role == 'skolotajs')
                         <li class="nav-item">
                             <a class="nav-link" href="http://tutorer.dev/file">
@@ -138,7 +130,7 @@
                         </ul>
                     </div>
                 </nav>
-            </div>
+            
         </div>
     </div>
 </nav>

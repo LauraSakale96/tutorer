@@ -46,7 +46,7 @@ class TeacherprofilesController extends Controller
         
         
             
-               return view( 'teacherprofiles.create', array('user' => Auth::user()));
+               return view( 'teacherprofiles.create');
     }
 
 
@@ -65,7 +65,7 @@ class TeacherprofilesController extends Controller
                 'subject' => $request->input('subject'),
                 'education' => $request->input('education'),
                 'description' => $request->input('description'),
-                'image'=>$request->input('image'),
+                'image'=>$request->file('image'),
                 'user_id' => Auth::user()->id
             ]);
             if($teacherprofile){
@@ -128,6 +128,7 @@ class TeacherprofilesController extends Controller
         return redirect()->route('teacherprofiles.show', ['teacherprofile'=> $teacherprofile->id])
         ->with('success' , 'Profils ir veiksmīgi rediģēts!');
         }
+        
     }
     
     

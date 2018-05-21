@@ -58,7 +58,7 @@ class FilesController extends Controller
                         foreach($request->file('filename') as $file)
                         {
                             $name=$file->getClientOriginalName();
-                            $file->move(public_path().'/files/', $name);  
+                            $file->move(public_path().'/uploads/files/', $name);  
                             $data[] = $name;  
                             
                         }
