@@ -2,5 +2,6 @@
 
 
 @section('content')
-<h1>Noderīga informācijas par sistēmu</h1>
+<h1>Noderīga informācijas par sistēmu:</h1>
+<p>...</p>
 @endsection
