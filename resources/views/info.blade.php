@@ -3,5 +3,5 @@
 
 
 @section('content')
-<h1>Change this file </h1>
+<h1>Noderīga informācijas par sistēmu</h1>
 @endsection
