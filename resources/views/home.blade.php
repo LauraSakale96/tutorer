@@ -13,7 +13,6 @@
   <body>
   <main role="main float:right">
 
-      <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron float:right">
         <div class="container float:right">
           <h1 class="display-3">TUTORER- palīgs pašapmācības skolotājiem!</h1>
@@ -22,7 +21,7 @@
         </div>
       </div>
   <div class="container float:right">
-        <!-- Example row of columns -->
+ 
         <div class="row">
           <div class="col-md-4">
             <h2>Priekšmeti</h2>
@@ -46,7 +45,7 @@
 
         <hr>
 
-      </div> <!-- /container -->
+      </div> 
   </body>
 
 @endsection

@@ -36,6 +36,7 @@
                 text-align: right;
                 height: 100%;
                 width: 80%;
+               
             }
     </style>
 </head>

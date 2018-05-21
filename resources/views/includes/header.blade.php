@@ -94,7 +94,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="http://tutorer.dev/file">
                             <span data-feather="file-text"></span>
-                            Mācību materiāli
+                            Materiāli
                             </a>
                         </li>
 
