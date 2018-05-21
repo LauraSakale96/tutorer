@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/help', 'HelpController@index')->name('help');
+Route::get('/info', 'InfoController@index')->name('info');
 
 Route::middleware(['auth'])->group( function(){
     Route::resource('studentprofiles', 'StudentprofilesController');

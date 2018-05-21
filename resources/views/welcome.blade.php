@@ -8,7 +8,8 @@
         <title>Tutorer</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
         <!-- Styles -->
         <style>
@@ -76,5 +77,8 @@
 
             </div>
         </div>
+        
+                      
     </body>
+    
 </html>

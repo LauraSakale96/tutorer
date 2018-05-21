@@ -1,7 +1,6 @@
 @extends('layouts.master')
-@section('nav-bar')
 
-@endsection
+
 
 @section('content')
 <head>
@@ -16,17 +15,28 @@
       <div class="jumbotron float:right">
         <div class="container float:right">
           <h1 class="display-3">TUTORER- palīgs pašapmācības skolotājiem!</h1>
-          <p>Tutorer ir palīigs pašapmācības skolotājiem. Kur tie var pievienot visus priekšmetus, kurus tie pasniedz. Pievienot noteiktajiem priekšmetiem nodarbības. Pievienot mācību materiālus un glabāt tos vienuviet!  </p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Uzzini vairāk! &raquo;</a></p>
+          <p>Tutorer ir palīgs pašapmācības skolotājiem. Kur tie var pievienot visus priekšmetus, kurus tie pasniedz. Pievienot noteiktajiem priekšmetiem nodarbības. Pievienot mācību materiālus un glabāt tos vienuviet!  </p>
+          <p><a class="btn btn-primary btn-lg" href="http://tutorer.dev/info" role="button">Uzzini vairāk! &raquo;</a></p>
         </div>
       </div>
   <div class="container float:right">
- 
+  <div class="col-md-4">
+            <h2>Profils</h2>
+            <p>Izveido savu profilu, kur vari norādīt visu svarīgāko iznformāciju par sevi.</p>
+            @if(Auth::user()->role == 'skolnieks') 
+              <p><a class="btn btn-secondary" href="http://tutorer.dev/studentprofiles" role="button">Apskati savu profilu &raquo; </a></p>
+             @endif
+             @if(Auth::user()->role == 'skolotajs') 
+              <p><a class="btn btn-secondary" href="http://tutorer.dev/teacherprofiles" role="button">Apskati savu profilu &raquo;</a></p>
+             @endif 
+
+          </div>
         <div class="row">
           <div class="col-md-4">
             <h2>Priekšmeti</h2>
-            <p>Pievieno apskati mācību priekšmetus- pievieno nosaukumu un aprakstu māčibu priekšmetiem, kurus pasniedz! </p>
-            <p><a class="btn btn-secondary" href="http://tutorer.dev/subjects" role="button">Pievienot priekšmetu &raquo;</a></p>
+            <p>Pievieno apskati mācību priekšmetus- pievieno nosaukumu un aprakstu mācību priekšmetiem, kurus pasniedz! </p>
+            <p><a class="btn btn-secondary" href="http://tutorer.dev/lessons" role="button">Pievienot priekšmetu &raquo;</a></p>
+            
             
           </div>
           <div class="col-md-4">
@@ -35,12 +45,7 @@
             <p><a class="btn btn-secondary" href="http://tutorer.dev/lessons" role="button">Pievienot priekšmetu &raquo;</a></p>
             
           </div>
-          <div class="col-md-4">
-            <h2>Add something</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-secondary" href="http://tutorer.dev/lessons" role="button">Pievienot priekšmetu &raquo;</a></p>
-
-          </div>
+          
         </div>
 
         <hr>
