@@ -14,13 +14,15 @@
 
       <div class="jumbotron float:right">
         <div class="container float:right">
-          <h1 class="display-3">TUTORER- palīgs pašapmācības skolotājiem!</h1>
+          <h2 class="display-2">TUTORER- palīgs pašapmācības skolotājiem!</h2>
           <p>Tutorer ir palīgs pašapmācības skolotājiem. Kur tie var pievienot visus priekšmetus, kurus tie pasniedz. Pievienot noteiktajiem priekšmetiem nodarbības. Pievienot mācību materiālus un glabāt tos vienuviet!  </p>
           <p><a class="btn btn-primary btn-lg" href="http://tutorer.dev/info" role="button">Uzzini vairāk! &raquo;</a></p>
         </div>
       </div>
   <div class="container float:right">
-  <div class="col-md-4">
+  
+        <div class="row">
+        <div class="col-md-4">
             <h2>Profils</h2>
             <p>Izveido savu profilu, kur vari norādīt visu svarīgāko iznformāciju par sevi.</p>
             
@@ -28,7 +30,6 @@
           
 
           </div>
-        <div class="row">
           <div class="col-md-4">
             <h2>Priekšmeti</h2>
             <p>Pievieno apskati mācību priekšmetus- pievieno nosaukumu un aprakstu mācību priekšmetiem, kurus pasniedz! </p>

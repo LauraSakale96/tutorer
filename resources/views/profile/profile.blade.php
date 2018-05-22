@@ -17,6 +17,13 @@
                 <input type="submit" class="pull-right btn btn-sm btn-primary">
                 </form>
         </div>
+        <div class="col-sm-3 col-md-3 col-lg-3 pull-right">
+         
+          <div class="sidebar-module">
+          
+            <ol class="list-unstyled">
+            <li><a href="/profile/edit">Rediģēt</a></li>
+               
     </div>
 </div>
 @endsection
