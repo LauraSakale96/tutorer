@@ -16,17 +16,14 @@ class CreateLessonsTable extends Migration
         Schema::create('lessons', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->date('lessondate');
+            $table->string('lessondate');
             $table->longText('description')->nullable();
             $table->string('file')->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('subject_id')->unsigned()->nullable();
             $table->foreign('subject_id')->references('id')->on('subjects');
-            $table->integer('teacherprofile_id')->unsigned()->nullable();
-            $table->foreign('teacherprofile_id')->references('id')->on('teacherprofiles');
-            $table->integer('studentprofile_id')->unsigned()->nullable();
-            $table->foreign('studentprofile_id')->references('id')->on('studentprofiles');
+            
             $table->timestamps();
         });
     }

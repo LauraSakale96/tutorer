@@ -47,6 +47,7 @@ class LessonsController extends Controller
                 $subjects = Subject::where('user_id', Auth::user()->id)->get();
             }
             
+            
                return view( 'lessons.create', ['subject_id'=>$subject_id, 'subjects'=>$subjects]);
     }
 
@@ -87,6 +88,7 @@ class LessonsController extends Controller
     {
        // $lesson = Lesson::where('id', $lesson->id )->first();
        $lesson = Lesson::find($lesson->id );
+       
 
     
        return view( 'lessons.show', ['lesson'=>$lesson]);

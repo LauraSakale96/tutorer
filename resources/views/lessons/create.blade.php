@@ -36,23 +36,6 @@
                         
                 </div>
 
-                <div class="form-group">
-                <label for="lesson-lessondate">Nodarbības datums<span class="required">*</span></label>
-                     <input class="date form-control" type="text"
-                     id="lesson-lessondate"
-                    name="lessondate"
-                    spellcheck="false"
-                        class="form-control"
-                    />
-                    
-                <script type="text/javascript">
-                    $('.date').datepicker({  
-                    format: 'dd-mm-yyyy'
-                     });  
-                </script>
-                 </div>
-
-
                 @if( $subjects == null)
                 <input
                 class="form-control"
@@ -72,9 +55,27 @@
                     <option value="{{$subject->id}}">{{$subject->name}}</option>
                     @endforeach
                 </select>
-
                 </div>
                 @endif
+
+               
+                
+
+                <div class="form-group">
+                <label for="lesson-lessondate">Nodarbības datums<span class="required">*</span></label>
+                     <input class="date form-control" type="text"
+                     id="lesson-lessondate"
+                    name="lessondate"
+                    spellcheck="false"
+                        class="form-control"
+                    />
+                    
+                <script type="text/javascript">
+                    $('.date').datepicker({  
+                    format: 'dd-mm-yyyy'
+                     });  
+                </script>
+                 </div>
                 <div class="form-group">
                 <label for="lesson-content">Apraksts</label>
                 <textarea 
@@ -87,8 +88,6 @@
                         </textarea>
                 </div>
 
-                <div class="form-group">
-                <label for="lesson-content">Nodarbības materiāls</label>
                 
                 
 

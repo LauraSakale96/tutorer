@@ -40,8 +40,8 @@ class SubjectsController extends Controller
     {
         
         
+           return view( 'subjects.create');
             
-               return view( 'subjects.create');
     }
 
     /**

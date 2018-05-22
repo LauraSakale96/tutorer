@@ -23,12 +23,9 @@
   <div class="col-md-4">
             <h2>Profils</h2>
             <p>Izveido savu profilu, kur vari norādīt visu svarīgāko iznformāciju par sevi.</p>
-            @if(Auth::user()->role == 'skolnieks') 
-              <p><a class="btn btn-secondary" href="http://tutorer.dev/studentprofiles" role="button">Apskati savu profilu &raquo; </a></p>
-             @endif
-             @if(Auth::user()->role == 'skolotajs') 
+            
               <p><a class="btn btn-secondary" href="http://tutorer.dev/teacherprofiles" role="button">Apskati savu profilu &raquo;</a></p>
-             @endif 
+          
 
           </div>
         <div class="row">

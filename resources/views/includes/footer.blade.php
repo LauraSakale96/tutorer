@@ -19,12 +19,7 @@
       <!-- Grid column -->
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 font-weight-bold">Noderīgas saites</h6>
-       @if(Auth::user()->role == 'skolnieks') 
-       <p><a href="http://tutorer.dev/studentprofiles">Jūsu profils</a></p>
-       @endif
-       @if(Auth::user()->role == 'skolotajs') 
-       <p><a href="http://tutorer.dev/teacherprofiles">Jūsu profils</a></p>
-       @endif
+       <p><a href="http://tutorer.dev/teacherprofiles">Jūsu profils</a></p> 
         <p><a href="http://tutorer.dev/info">Informācija par vietni</a></p>
         <p><a href="http://tutorer.dev/help">Palīdzība</a></p>
       </div>

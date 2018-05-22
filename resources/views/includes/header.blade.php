@@ -54,7 +54,7 @@
                             Sākums
                             </a>
                         </li>
-                        @if(Auth::user()->role == 'skolotajs')
+                      
                         <li class="nav-item">
                             <a class="nav-link" href="http://tutorer.dev/teacherprofiles">
                             <span data-feather="file-text"></span>
@@ -62,16 +62,7 @@
                             </a>
                         </li>
 
-                        @endif
-
-                        @if(Auth::user()->role == 'skolnieks')
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://tutorer.dev/studentprofiles">
-                            <span data-feather="users"></span>
-                            Profils
-                            </a>
-                        </li>
-                        @endif
+                      
 
                         <li class="nav-item">
                             <a class="nav-link" href="http://tutorer.dev/subjects">
@@ -90,7 +81,6 @@
                         </li>
 
                     
-                            @if(Auth::user()->role == 'skolotajs')
                         <li class="nav-item">
                             <a class="nav-link" href="http://tutorer.dev/file">
                             <span data-feather="file-text"></span>
@@ -98,8 +88,12 @@
                             </a>
                         </li>
 
-                        @endif
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <span data-feather="user-plus"></span>
+                            Skolēni
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="http://tutorer.dev/attendances">
                             <span data-feather="check-square"></span>

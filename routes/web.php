@@ -22,12 +22,12 @@ Route::get('/help', 'HelpController@index')->name('help');
 Route::get('/info', 'InfoController@index')->name('info');
 
 Route::middleware(['auth'])->group( function(){
-    Route::resource('studentprofiles', 'StudentprofilesController');
-    Route::resource('teacherprofiles', 'TeacherprofilesController');
+    
     Route::resource('subjects', 'SubjectsController');
     Route::resource('lessons', 'LessonsController');
     Route::resource('studentlists', 'StudentlistsController');
     Route::resource('file', 'FilesController');
+    
   // Route::get('file','FilesController@create');
    //Route::post('file','FilesController@store');
    //Route::get('files.create', 'FilesController@create');

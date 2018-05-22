@@ -24,7 +24,7 @@
 
             
             <div class="form-group">
-                <label for="subject-name">Nosaukums<span class="required">*</span></label>
+                <label for="subject-name">Priekšmeta nosaukums<span class="required">*</span></label>
                 <input placeholder="Ievadiet priekšmeta nosaukumu"
                         id="subject-name"
                         required
@@ -36,7 +36,7 @@
                         
                 </div>
 
-              
+               
                 <div class="form-group">
                 <label for="subject-content">Apraksts</label>
                 <textarea 
@@ -50,6 +50,9 @@
                 </div>
 
                 
+                
+
+                
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary"
                         value="Ievadīt"/>
@@ -61,13 +64,13 @@
 </div>
 
 <div class="col-sm-3 col-md-3 col-lg-3 pull-right">
-         
-          <div class="sidebar-module">
-            <h4>Izvēlies savu darbību</h4>
-            <ol class="list-unstyled">
-              <li><a href="/subjects">Apskatīt visu manu priekšmetu sarakstu</a></li>
-            </ol>
-          </div>
-           
-        </div>
+
+ <div class="sidebar-module">
+   <h4>Izvēlies savu darbību</h4>
+   <ol class="list-unstyled">
+     <li><a href="/subjects">Apskatīt visu manu priekšmetu sarakstu</a></li>
+   </ol>
+ </div>
+  
+</div>
     @endsection

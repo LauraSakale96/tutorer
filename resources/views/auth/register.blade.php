@@ -39,20 +39,41 @@
                                 
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="subject" class="col-md-4 col-form-label text-md-right">{{ __('Priekšmets/-i, ko pasniedzat') }}</label>
 
-                        <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
-                            <label for="role" class="col-md-4 control-label text-md-right">{{ __('Autorizēties kā') }}</label>
+                            <div class="col-md-8">
+                                <input id="subject" type="text" class="form-control{{ $errors->has('subject') ? ' is-invalid' : '' }}" name="subject" value="{{ old('subject') }}" required autofocus>
 
-                            <div class="col-md-8 text-md-right float-right">
-                                <select class="col-md-4-right form-control" name="role">
-                                    <option value="empty"> </option>
-                                    <option value="skolotajs">Skolotājs</option>
-                                    <option value="skolnieks">Skolnieks</option>
-                                 </select>
+                                @if ($errors->has('subject'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('subject') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="education" class="col-md-4 col-form-label text-md-right">{{ __('Jūsu izglītība') }}</label>
 
-                                @if ($errors->has('role'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('role') }}</strong>
+                            <div class="col-md-8">
+                                <input id="education" type="text" class="form-control{{ $errors->has('education') ? ' is-invalid' : '' }}" name="education" value="{{ old('education') }}"  autofocus>
+
+                                @if ($errors->has('education'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('education') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Apraksts') }}</label>
+
+                            <div class="col-md-8">
+                                <input id="description" type="text" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{ old('description') }}"  autofocus>
+
+                                @if ($errors->has('description'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('description') }}</strong>
                                     </span>
                                 @endif
                             </div>
