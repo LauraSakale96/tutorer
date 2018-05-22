@@ -13,7 +13,7 @@ class Teacherprofile extends Model
         'education',
         'description',
         'image',
-        'user_id'
+        'user_id',
     ];
     
 }
