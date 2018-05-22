@@ -18,7 +18,8 @@
 <ul class="navbar-nav ml-auto">
     
         <li class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="position:relative;padding-left:50px;">
+                <img src="/uploads/image/{{ Auth::user()->image}}" style="width:32px; height:32px; position:absolute; top:10px; left:10px; border-radius:50%">
                 {{ Auth::user()->name }} {{Auth::user()->lastname}}
             </a>
 
@@ -56,7 +57,7 @@
                         </li>
                       
                         <li class="nav-item">
-                            <a class="nav-link" href="http://tutorer.dev/teacherprofiles">
+                            <a class="nav-link" href="http://tutorer.dev/profile">
                             <span data-feather="file-text"></span>
                             Profils
                             </a>
