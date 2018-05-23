@@ -25,7 +25,7 @@ Route::middleware(['auth'])->group( function(){
     
     Route::resource('subjects', 'SubjectsController');
     Route::resource('lessons', 'LessonsController');
-    Route::resource('studentlists', 'StudentlistsController');
+    Route::resource('students', 'StudentsController');
     Route::resource('file', 'FilesController');
     Route::get('profile', 'UserController@profile');
     Route::post('profile', 'UserController@update_image');

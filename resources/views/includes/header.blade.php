@@ -90,7 +90,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="http://tutorer.dev/students">
                             <span data-feather="user-plus"></span>
                             Skolēni
                             </a>

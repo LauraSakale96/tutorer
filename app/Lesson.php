@@ -11,8 +11,6 @@ class Lesson extends Model
         'description',
         'subject_id',
         'user_id',
-        'teacherprofile_id',
-        'studentprofile_id',
         'lessondate',
         'file',
     ];
