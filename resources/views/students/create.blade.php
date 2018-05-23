@@ -47,17 +47,18 @@
                 <div class="form-group">
                     <label for="student-gender">Dzimums<span class="required">*</span></label>
 
-                            <div class="col-md-8 text-md-right float-right">
-                                <select class="col-md-4-right form-control" name="gender">
+                            
+                                <select class="col-md-4-right form-control"  name="gender" style="height:100%">
                                     <option value="female">Sieviete</option>
                                     <option value="male">Vīrietis</option>
                                     <option value="none">Nevēlos norādīt</option>
                                  </select>
-                            </div>
+                            
                         </div>
+
                 <div class="form-group">
                 <label for="student-age">Vecums<span class="required">*</span></label>
-                <select name="age">
+                <select name="age" >
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -160,6 +161,7 @@
                     
                     
                 </select>
+                </div>
 
                 @if( $subjects == null)
                 <input
@@ -175,7 +177,7 @@
                 @if( $subjects != null)
                 <div class="form-group">
                 <label for="student-content">Izvēlies priekšmetu, kuram skolēns tiks pievienots</label>
-                <select name="subject_id" class="form-control">
+                <select name="subject_id" class="form-control" style="height:100%">
                   @foreach($subjects as $subject)
                     <option value="{{$subject->id}}">{{$subject->name}}</option>
                     @endforeach
@@ -199,7 +201,9 @@
  <div class="sidebar-module">
    <h4>Izvēlies savu darbību</h4>
    <ol class="list-unstyled">
-     <li><a href="/students">Apskatīt vius pievienotos skolēnus</a></li>
+     <li>
+     <span data-feather="users"></span>
+     <a href="/students">Apskatīt visus pievienotos skolēnus</a></li>
    </ol>
  </div>
   

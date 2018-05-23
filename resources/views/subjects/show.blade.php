@@ -25,13 +25,22 @@
           <div class="sidebar-module">
             <h4>Izvēlies savu darbību</h4>
             <ol class="list-unstyled">
-            <li><a href="/subjects/{{$subject->id}}/edit">Rediģēt</a></li>
-              <li><a href="/lessons/create/{{$subject->id}}">Pievienot nodarbību</a></li>
-              <li><a href="/subjects">Saraksts ar visiem priekšmetiem</a></li>
-              <li><a href="/subject/create">Pievienot jaunu priekšmetu</a></li>              
+            <li>
+            <span data-feather="edit"></span>
+            <a href="/subjects/{{$subject->id}}/edit">Rediģēt</a></li>
+              <li>
+              <span data-feather="plus-circle"></span>
+              <a href="/lessons/create/{{$subject->id}}">Pievienot nodarbību</a></li>
+              <li>
+              <span data-feather="book-open"></span>
+              <a href="/subjects">Saraksts ar visiem priekšmetiem</a></li>
+              <li>
+              <span data-feather="plus"></span>
+              <a href="/subject/create">Pievienot jaunu priekšmetu</a></li>              
               <br/>
 
               <li>
+              <span data-feather="delete"></span>
               <a   
               href="#"
                   onclick="

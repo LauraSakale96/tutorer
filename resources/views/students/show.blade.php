@@ -48,13 +48,21 @@
           <div class="sidebar-module">
             <h4>Izvēlies savu rīcību!</h4>
             <ol class="list-unstyled">
-              <li><a href="/students/{{$student->id}}/edit">Rediģēt</a></li>
-              <li><a href="/students/create">Pievienot jaunu skolēnu</a></li>
-              <li><a href="/lesstudentsstudentssons">Saraksts ar visiem skolēniem</a></li>
+              <li><span data-feather="edit"></span>
+              <a href="/students/{{$student->id}}/edit">Rediģēt</a></li>
+              
+              <li>
+              <span data-feather="user-plus"></span>
+              <a href="/students/create">Pievienot jaunu skolēnu</a></li>
+              
+              <li>
+              <span data-feather="users"></span>
+              <a href="/students">Skolēnu saraksts</a></li>
               
               <br/>
               @if($student->user_id == Auth::user()->id)
               <li>
+              <span data-feather="delete"></span>
               <a   
               href="#"
                   onclick="

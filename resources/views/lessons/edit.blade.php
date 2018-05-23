@@ -88,8 +88,12 @@
           <div class="sidebar-module">
             <h4>Ivēlieties savu darbību</h4>
             <ol class="list-unstyled">
-              <li><a href="/lessons/{{$lesson->id}}">Apskatīt nodarbības</a></li>
-              <li><a href="/lessons">Visas nodarbības</a></li>
+              <li>
+              <span data-feather="file"></span>
+              <a href="/lessons/{{$lesson->id}}">Apskatīt nodarbību</a></li>
+              <li>
+              <span data-feather="layers"></span>
+              <a href="/lessons">Visas nodarbības</a></li>
               
             </ol>
           </div>

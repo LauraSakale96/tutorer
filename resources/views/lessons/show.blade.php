@@ -28,13 +28,20 @@
           <div class="sidebar-module">
             <h4>Izvēlies savu rīcību!</h4>
             <ol class="list-unstyled">
-              <li><a href="/lessons/{{$lesson->id}}/edit">Rediģēt</a></li>
-              <li><a href="/lessons/create">Pievienot jaunu nodarbību</a></li>
-              <li><a href="/lessons">Saraksts ar visām nodarbībām</a></li>
+              <li>
+              <span data-feather="edit"></span>
+              <a href="/lessons/{{$lesson->id}}/edit">Rediģēt</a></li>
+              <li>
+              <span data-feather="plus-circle"></span>
+              <a href="/lessons/create">Pievienot jaunu nodarbību</a></li>
+              <li>
+              <span data-feather="layers"></span>
+              <a href="/lessons">Saraksts ar visām nodarbībām</a></li>
               
               <br/>
               @if($lesson->user_id == Auth::user()->id)
               <li>
+              <span data-feather="delete"></span>
               <a   
               href="#"
                   onclick="

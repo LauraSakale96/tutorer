@@ -14,7 +14,8 @@
                 <label>Nomaini Profila Bildi</label>
                 <input type="file" name="image">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="submit" class="pull-right btn btn-sm btn-primary">
+                <input type="submit" class="btn btn-primary"
+                        value="Ievadīt"/>
                 </form>
         </div>
         <div class="col-sm-3 col-md-3 col-lg-3 pull-right">

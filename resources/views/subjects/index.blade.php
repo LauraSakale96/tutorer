@@ -11,7 +11,6 @@
 <div class="col-md-9 col-lg-9 col-md-offset-1 col-lg-offset-1">
     <div class="panel panel-primary ">
     <div class="panel-heading">Mācību priekšmeti 
-
     <a class="pull-right btn btn-primary btn-sm" href="/subjects/create">Pievieno jaunu mācību priekšmetu</a></div>
   
     

@@ -59,8 +59,12 @@
           <div class="sidebar-module">
             <h4>Izvēlies savu rīcību</h4>
             <ol class="list-unstyled">
-              <li><a href="/subjects/{{$subject->id}}">Apskatīt mācību priekšmetus</a></li>
-              <li><a href="/subjects">Visi mācību priekšmeti</a></li>
+              <li>
+              <span data-feather="book"></span>
+              <a href="/subjects/{{$subject->id}}">Apskatīt mācību priekšmetu</a></li>
+              <li>
+              <span data-feather="book-open"></span>
+              <a href="/subjects">Visi mācību priekšmeti</a></li>
               
             </ol>
           </div>

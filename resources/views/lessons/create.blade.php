@@ -50,7 +50,7 @@
                 @if( $subjects != null)
                 <div class="form-group">
                 <label for="subject-content">Izvēlies priekšmetu, kuram pievienot nodarbību</label>
-                <select name="subject_id" class="form-control">
+                <select name="subject_id" class="form-control" style="height:100%">
                   @foreach($subjects as $subject)
                     <option value="{{$subject->id}}">{{$subject->name}}</option>
                     @endforeach
@@ -107,7 +107,9 @@
  <div class="sidebar-module">
    <h4>Izvēlies savu darbību</h4>
    <ol class="list-unstyled">
-     <li><a href="/lessons">Apskatīt visu manu nodarbību sarakstu</a></li>
+     <li>
+     <span data-feather="layers"></span>
+     <a href="/lessons">Apskatīt visu manu nodarbību sarakstu</a></li>
    </ol>
  </div>
   

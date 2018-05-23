@@ -98,7 +98,7 @@ class StudentsController extends Controller
    
     public function update(Request $request, Student $student)
     {
-        $studentUpdate = Stuudent::where('id', $student->id)
+        $studentUpdate = Student::where('id', $student->id)
         ->update([
                 'name'=> $request->input('name'),
                 'lastname'=> $request->input('lastname'),
