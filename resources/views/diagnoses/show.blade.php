@@ -12,9 +12,11 @@
 
       
       <div class="jumbotron">
-        <h1>{{ $lesson->name }}</h1>
-        <p class="lead">{{ $lesson->description}}</p>
-        <p class="lead">{{ $lesson->lessondate}}</p>
+        <h1>Diagnoze : {{ $diagnose->name }}</h1>
+        <p class="lead">Diagnozes apraksts : {{ $diagnose->description}}</p>
+        @if(diagnose()->treatment)
+        <p class="lead">Ārstēšanas plāns : {{ $diagnose->treatment}}</p>
+        @endif
       
 
       
@@ -30,22 +32,22 @@
             <ol class="list-unstyled">
               <li>
               <span data-feather="edit"></span>
-              <a href="/lessons/{{$lesson->id}}/edit">Rediģēt</a></li>
+              <a href="/diagnoses/{{$diagnose->id}}/edit">Rediģēt</a></li>
               <li>
-              <span data-feather="plus-circle"></span>
-              <a href="/lessons/create">Pievienot jaunu nodarbību</a></li>
+              <span data-feather="plus-square"></span>
+              <a href="/diagnoses/create">Pievienot jaunu diagnozi</a></li>
               <li>
-              <span data-feather="layers"></span>
-              <a href="/lessons">Saraksts ar visām nodarbībām</a></li>
+              <span data-feather="activity"></span>
+              <a href="/diagnoses">Saraksts ar visām diagnozēm</a></li>
               
               <br/>
-              @if($lesson->user_id == Auth::user()->id)
+              @if($diagnose->user_id == Auth::user()->id)
               <li>
               <span data-feather="delete"></span>
               <a   
               href="#"
                   onclick="
-                  var result = confirm('Vai tiešām vēlaties izdzēst šo mācību nodarbību?');
+                  var result = confirm('Vai tiešām vēlaties izdzēst šo diagnozi?');
                       if( result ){
                               event.preventDefault();
                               document.getElementById('delete-form').submit();
@@ -55,7 +57,7 @@
                   Dzēst
               </a>
 
-              <form id="delete-form" action="{{ route('lessons.destroy',[$lesson->id]) }}" 
+              <form id="delete-form" action="{{ route('diagnoses.destroy',[$diagnose->id]) }}" 
                 method="POST" style="display: none;">
                         <input type="hidden" name="_method" value="delete">
                         {{ csrf_field() }}
