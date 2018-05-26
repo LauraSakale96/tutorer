@@ -70,12 +70,12 @@ class SubjectsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Party  $party
+     * @param  \App\
      * @return \Illuminate\Http\Response
      */
     public function show(Subject $subject)
     {
-       // $party = Party::where('id', $party->id )->first();
+      
        $subject = Subject::find($subject->id );
 
     
@@ -85,7 +85,7 @@ class SubjectsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Party  $party
+     * @param  \App\  
      * @return \Illuminate\Http\Response
      */
     public function edit(Subject $subject)

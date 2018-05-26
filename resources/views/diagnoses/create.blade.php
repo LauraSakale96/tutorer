@@ -40,7 +40,7 @@
             @if( $students != null)
             <div class="form-group">
             <label for="student-content">Izvēlies skolēnu, kuram pievienot diagnozi</label>
-            <select name="student" class="form-control" style="height:100%">
+            <select name="student_id" class="form-control" style="height:100%">
               @foreach($students as $student)
                 <option value="{{$student->id}}">{{$student->name}}  {{$student->lastname}}</option>
                 @endforeach

@@ -11,8 +11,7 @@ class Subject extends Model
         'name', 
         'description',
         'user_id',
-        'teacherprofile_id',
-        'studentprofile_id',
+        
     ];
     public function user(){
         return $this->belongsTo('App\User');

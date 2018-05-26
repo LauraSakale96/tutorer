@@ -106,7 +106,7 @@ class StudentsController extends Controller
                 'gender'=>$request->input('gender')
         ]);
         if($studentUpdate){
-        return redirect()->route('students.show', ['student'=> $stuent->id])
+        return redirect()->route('students.show', ['student'=> $student->id])
         ->with('success' , 'Skolēna profils ir veiksmīgi rediģēts');
         }
     }

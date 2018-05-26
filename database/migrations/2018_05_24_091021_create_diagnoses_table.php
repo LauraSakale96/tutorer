@@ -20,7 +20,7 @@ class CreateDiagnosesTable extends Migration
             $table->longText('treatment')->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('student_id')->unsigned();
+            $table->integer('student_id')->unsigned()->nullable();
             $table->foreign('student_id')->references('id')->on('students');
             $table->timestamps();
         });

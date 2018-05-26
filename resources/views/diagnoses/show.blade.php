@@ -12,11 +12,11 @@
 
       
       <div class="jumbotron">
-        <h1>Diagnoze : {{ $diagnose->name }}</h1>
+        
+      <h1>Diagnoze : {{ $diagnose->name }}</h1>
         <p class="lead">Diagnozes apraksts : {{ $diagnose->description}}</p>
-        @if(diagnose()->treatment)
         <p class="lead">Ārstēšanas plāns : {{ $diagnose->treatment}}</p>
-        @endif
+        
       
 
       

@@ -9,6 +9,16 @@ use Image;
 
 class UserController extends Controller
 {
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'image' => 'required',
+            'image.*' => 'mimes:jpg,jpeg,png',
+            
+            
+            
+        ]);
+    }
     public function profile()
     {
         return view('profile.profile', array('user' => Auth::user()));

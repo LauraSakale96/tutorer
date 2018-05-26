@@ -86,7 +86,7 @@ class FilesController extends Controller
      */
     public function show(File $file)
     {
-      // $file = File::find($file->id );
+     
         
             
                return view( 'file.show', ['file'=>$file]);
