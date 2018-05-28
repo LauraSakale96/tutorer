@@ -176,7 +176,7 @@
 
                 @if( $subjects != null)
                 <div class="form-group">
-                <label for="student-content">Izvēlies priekšmetu, kuram skolēns tiks pievienots</label>
+                <label for="student-content">Izvēlies priekšmetu, kuram skolēns tiks pievienots<span class="required">*</span></label>
                 <select name="subject_id" class="form-control" style="height:100%">
                   @foreach($subjects as $subject)
                     <option value="{{$subject->id}}">{{$subject->name}}</option>

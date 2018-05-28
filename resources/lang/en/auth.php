@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
+    'failed' => 'Lietotājs ar šādu e-pasta adresi neeksistē. Mēģiniet vēlreiz.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
 ];

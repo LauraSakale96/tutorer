@@ -31,33 +31,23 @@ class RegisterController extends Controller
     
     protected $redirectTo = '/home';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+    
     public function __construct()
     {
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
+   //validācijas pārbaude
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'lastname' => 'required|string|max:255',
-            'subject' =>'required|string|max:255',
-            'education' =>'required|string|max:255',
-            'description'=>'string|max:255',
+            'name' => 'required|string|max:100',
+            'lastname' => 'required|string|max:100',
+            'subject' =>'required|string|max:1000',
+            'education' =>'required|string|max:100',
             'image'=>'string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:6|max:50|confirmed',
         ]);
     }
 
@@ -67,6 +57,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+    //izveido jaunu objektu
     protected function create(array $data)
     {
         return User::create([
@@ -74,7 +65,6 @@ class RegisterController extends Controller
             'lastname' => $data['lastname'],
             'subject' => $data['subject'],
             'education' => $data['education'],
-            'description' => $data['description'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

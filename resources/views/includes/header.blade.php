@@ -103,7 +103,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="http://tutorer.dev/progreses">
+                            <a class="nav-link" href="http://tutorer.dev/progresses">
                             <span data-feather="award"></span>
                             Progress
                             </a>
@@ -116,12 +116,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://tutorer.dev/posts">
-                            <span data-feather="mail"></span>
-                            Pasts
-                            </a>
-                        </li> 
+                        
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}"

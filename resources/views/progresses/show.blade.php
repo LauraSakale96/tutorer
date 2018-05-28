@@ -12,9 +12,9 @@
 
       
       <div class="jumbotron">
-        <h1>{{ $lesson->name }}</h1>
-        <p class="lead">{{ $lesson->description}}</p>
-        <p class="lead">{{ $lesson->lessondate}}</p>
+        <h1>{{ $progress->name }}</h1>
+        <p class="lead">{{ $progress->description}}</p>
+        <p class="lead">{{ $progress->date}}</p>
       </div>
 
      
@@ -27,22 +27,22 @@
             <ol class="list-unstyled">
               <li>
               <span data-feather="edit"></span>
-              <a href="/lessons/{{$lesson->id}}/edit">Rediģēt</a></li>
+              <a href="/progresses/{{$progress->id}}/edit">Rediģēt</a></li>
               <li>
               <span data-feather="plus-circle"></span>
-              <a href="/lessons/create">Pievienot jaunu nodarbību</a></li>
+              <a href="/progresses/create">Pievienot jaunu progresu</a></li>
               <li>
               <span data-feather="layers"></span>
-              <a href="/lessons">Saraksts ar visām nodarbībām</a></li>
+              <a href="/progresses">Saraksts ar visiem progresiem</a></li>
               
               <br/>
-              @if($lesson->user_id == Auth::user()->id)
+              @if($progress->user_id == Auth::user()->id)
               <li>
               <span data-feather="delete"></span>
               <a   
               href="#"
                   onclick="
-                  var result = confirm('Vai tiešām vēlaties izdzēst šo mācību nodarbību?');
+                  var result = confirm('Vai tiešām vēlaties izdzēst šo progresu?');
                       if( result ){
                               event.preventDefault();
                               document.getElementById('delete-form').submit();
@@ -52,7 +52,7 @@
                   Dzēst
               </a>
 
-              <form id="delete-form" action="{{ route('lessons.destroy',[$lesson->id]) }}" 
+              <form id="delete-form" action="{{ route('progresses.destroy',[$progress->id]) }}" 
                 method="POST" style="display: none;">
                         <input type="hidden" name="_method" value="delete">
                         {{ csrf_field() }}

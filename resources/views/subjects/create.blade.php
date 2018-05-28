@@ -30,15 +30,16 @@
                         required
                         name="name"
                         spellcheck="false"
-                        class="form-control"
-                       
+                        class="form-control"                      
                         />
                         
                 </div>
 
+                
+
                
                 <div class="form-group">
-                <label for="subject-content">Apraksts</label>
+                <label for="subject-content">Apraksts<span class="required">*</span></label>
                 <textarea 
                         style="resize: vertical"
                         id="subject-content"

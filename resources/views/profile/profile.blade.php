@@ -18,13 +18,5 @@
                         value="Ievadīt"/>
                 </form>
         </div>
-        <div class="col-sm-3 col-md-3 col-lg-3 pull-right">
-         
-          <div class="sidebar-module">
-          
-            <ol class="list-unstyled">
-            <li><a href="/profile/edit">Rediģēt</a></li>
-               
-    </div>
 </div>
 @endsection

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model
 {
-    protected $fillable = [
+    protected $fillable = [ //aizpildāmie lauki
         'name', 
         'description',
         'subject_id',
@@ -14,6 +14,7 @@ class Lesson extends Model
         'lessondate',
         'file',
     ];
+    //nosaka atkarības
     public function user(){
         return $this->belongsToMany('App\User');
     }

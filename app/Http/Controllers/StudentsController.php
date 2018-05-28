@@ -6,24 +6,22 @@ use App\Student;
 use App\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class StudentsController extends Controller
 {
+    //validācijas funkcija
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'lastname' => 'required|string|max:255',
+            'name' => 'required|string|max:100',
+            'lastname' => 'required|string|max:100',
             'age' => 'required|integer',
             'gender' => 'required|string|max:255',
             
         ]);
     }
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+     //atgriež skatu ar visiem autorizētā lietotāja pievienotajiem skolēniem
     public function index()
     {
         if(Auth::check()){
@@ -34,11 +32,7 @@ class StudentsController extends Controller
         return view('auth.login');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //izveido skolēnu, ļauj tam piesaistīt priekšmetu, ko tas apmeklē
     public function create($subject_id= null)
     {
         $subjects = null;
@@ -51,12 +45,7 @@ class StudentsController extends Controller
                return view( 'students.create', ['subject_id'=>$subject_id, 'subjects'=>$subjects]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    //glabā informāciju datubāzē
     public function store(Request $request)
     {
         if(Auth::check()){
@@ -78,7 +67,7 @@ class StudentsController extends Controller
             return back()->withInput()->with('errors', 'Neizdevās pievienot jaunu skolēnu');
     }
 
-    
+    //parāda konkrētā skolēna informāciju
     public function show(Student $student)
     {
        
@@ -86,7 +75,7 @@ class StudentsController extends Controller
        return view( 'students.show', ['student'=>$student]);
     }
 
-   
+   //atgriež skolēna rediģēšanas skatu
     public function edit(Student $student)
     {
         $student = Student::find($student->id );
@@ -95,7 +84,7 @@ class StudentsController extends Controller
                return view( 'students.edit', ['student'=>$student]);
     }
 
-   
+   //atjauno informāciju datubāzē
     public function update(Request $request, Student $student)
     {
         $studentUpdate = Student::where('id', $student->id)
@@ -111,7 +100,7 @@ class StudentsController extends Controller
         }
     }
 
-   
+   //izdzēš skolēna informāciju no datubāzes
     public function destroy(Student $student)
     {
         

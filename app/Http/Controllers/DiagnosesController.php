@@ -6,23 +6,21 @@ use App\Diagnose;
 use App\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class DiagnosesController extends Controller
 {
+    //validācijas funkcija
     protected function validator(array $data)
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'description' => 'longText|max:500',
-            'treatment' => 'longText|max:1000',
+            'description' => 'string|max:500',
+            'treatment' => 'string|max:1000',
            
         ]);
     }
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+     //atgriež sarakstu ar visām autorizētā lietotāja pievienotajām diagnozēm
     public function index()
     {
         if(Auth::check()){
@@ -33,29 +31,18 @@ class DiagnosesController extends Controller
         return view('auth.login');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   //izveido diagnozi
     public function create($student_id= null)
     {
         $students = null;
-            if (!$student_id){
+            if (!$student_id){  //ļauj attēlot visus studentus, lai varētu parādīt sarakstu un izvēlēties, kuram skolēnam pievienot diagnozi
 
                 $students = Student::where('user_id', Auth::user()->id)->get();
-            }
-            
-            
+            }     
                return view( 'diagnoses.create', ['student_id'=>$student_id, 'students'=>$students]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    //saglabā datus datubāzē
     public function store(Request $request)
     {
         if(Auth::check()){
@@ -75,25 +62,15 @@ class DiagnosesController extends Controller
         
             return back()->withInput()->with('errors', 'Neizdevās pievienot jaunu diagnozi');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     */
+    //atgriež konkrētās diagnozes skatu
     public function show(Diagnose $diagnose)
     {
        
        $diagnose = Diagnose::find($diagnose->id );
        
-
-    
        return view( 'diagnoses.show', ['diagnose'=>$diagnose]);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     */
+    //atgriež rediģēšanas skatu
     public function edit(Diagnose $diagnose)
     {
         $diagnose = Diagnose::find($diagnose->id );
@@ -102,10 +79,7 @@ class DiagnosesController extends Controller
                return view( 'diagnoses.edit', ['diagnose'=>$diagnose]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     */
+   //atjauno informāciju par diagnozi
     public function update(Request $request, Diagnose $diagnose)
     {
         $diagnoseUpdate = Diagnose::where('id', $diagnose->id)
@@ -120,10 +94,7 @@ class DiagnosesController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     */
+    //izdzēš konkrētos datus
     public function destroy(Diagnose $diagnose)
     {
         

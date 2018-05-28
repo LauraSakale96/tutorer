@@ -56,7 +56,7 @@
                             <label for="education" class="col-md-4 col-form-label text-md-right">{{ __('Jūsu izglītība') }}</label>
 
                             <div class="col-md-8">
-                                <input id="education" type="text" class="form-control{{ $errors->has('education') ? ' is-invalid' : '' }}" name="education" value="{{ old('education') }}"  autofocus>
+                                <input id="education" type="text" class="form-control{{ $errors->has('education') ? ' is-invalid' : '' }}" name="education" value="{{ old('education') }}" required autofocus>
 
                                 @if ($errors->has('education'))
                                     <span class="invalid-feedback">
@@ -65,19 +65,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Apraksts') }}</label>
-
-                            <div class="col-md-8">
-                                <input id="description" type="text" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{ old('description') }}"  autofocus>
-
-                                @if ($errors->has('description'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('description') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Pasta Adrese') }}</label>
@@ -123,6 +111,10 @@
                             </div>
                         </div>
                     </form>
+                    <br>
+                    <div class="alert alert-info">
+                        <strong>Ievērojiet!</strong> Autorizējoties Jūs piekrītat, ka Jūsu sniegtā informācija tiek glabāta sistēmas datubāzē, taču tā tiks izmantota tika, lai ļautu Jums piekļūt visām rakstīšanas, lasīšanas, rediģēšanas un dzēšanas funkcijām. Sniegtā informācija netiks nodota trešajām partijām vai izmantota ārpus šīs sistēmas.
+                    </div>
                 </div>
             </div>
         </div>

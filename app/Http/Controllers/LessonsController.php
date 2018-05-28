@@ -6,24 +6,22 @@ use App\Lesson;
 use App\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class LessonsController extends Controller
 {
+    //validācijas funkcija
     protected function validator(array $data)
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'description' => 'string|max:255',
-            'file.*' => 'mimes:doc,pdf,docx,zip',
+            'description' => 'string|max:1000',
+            //'file.*' => 'mimes:doc,pdf,docx,zip',
             'lessondate' => 'required|max:255',
             
         ]);
     }
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+     //atgriež skatu ar visām pievienotajām nodarbībām
     public function index()
     {
         if(Auth::check()){
@@ -34,11 +32,7 @@ class LessonsController extends Controller
         return view('auth.login');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //izveido jaunu nodarbību un ļauj piesaistīt priekšmetu, kam šī nodarbība ir
     public function create($subject_id= null)
     {
         $subjects = null;
@@ -51,12 +45,7 @@ class LessonsController extends Controller
                return view( 'lessons.create', ['subject_id'=>$subject_id, 'subjects'=>$subjects]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    //glabā jaunizveidotās nodarbības datus datubāzē
     public function store(Request $request)
     {
         if(Auth::check()){
@@ -77,44 +66,22 @@ class LessonsController extends Controller
         
             return back()->withInput()->with('errors', 'Neizdevās izveidot jaunu nodarbību');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\lesson  $lesson
-     * @return \Illuminate\Http\Response
-     */
+    //parāda konkrētās nodarbības informāciju
     public function show(Lesson $lesson)
     {
-       // $lesson = Lesson::where('id', $lesson->id )->first();
        $lesson = Lesson::find($lesson->id );
-       
 
-    
        return view( 'lessons.show', ['lesson'=>$lesson]);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\lesson  $lesson
-     * @return \Illuminate\Http\Response
-     */
+    //atgriež skolēna rediģēšanas skatu
     public function edit(Lesson $lesson)
     {
         $lesson = Lesson::find($lesson->id );
-        
-            
+             
                return view( 'lessons.edit', ['lesson'=>$lesson]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\lesson  $lesson
-     * @return \Illuminate\Http\Response
-     */
+    //atjauno skolēna informāciju
     public function update(Request $request, Lesson $lesson)
     {
         $lessonUpdate = Lesson::where('id', $lesson->id)
@@ -130,12 +97,7 @@ class LessonsController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\lesson  $lesson
-     * @return \Illuminate\Http\Response
-     */
+    //izdzēš skolēna informāciju
     public function destroy(Lesson $lesson)
     {
         

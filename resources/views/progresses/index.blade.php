@@ -10,15 +10,15 @@
 
 <div class="col-md-9 col-lg-9 col-md-offset-1 col-lg-offset-1">
     <div class="panel panel-primary ">
-    <div class="panel-heading">Nodarbība </div>
+    <div class="panel-heading">Progress </div>
    
-    <a class="pull-right btn btn-primary btn-sm" href="/lessons/create">Pievieno nodarbību</a></div>
+    <a class="pull-right btn btn-primary btn-sm" href="/progresses/create">Pievieno progresu</a></div>
    
-    <div class="panel-body"> <!-- ar cikla palīdzību attēlo sarakstu ar visām nodarbībām un attiecīgi attēlo tā nosaukumu un datumu -->
+    <div class="panel-body"> <!-- ar cikla palīdzību attēlo sarakstu ar visiem progresiem un attiecīgi attēlo tā nosaukumu un datumu -->
 
         <ul class="list-group">
-        @foreach($lessons as $lesson)
-        <li class="list-group-item"> <a href="/lessons/{{$lesson->id}}">{{ $lesson->name}}, {{ $lesson->lessondate}}</a></li>
+        @foreach($progresses as $progress)
+        <li class="list-group-item"> <a href="/progresses/{{$progress->id}}">{{ $progress->name}}, {{ $progress->date}} </a></li>
         @endforeach
         </ul>
     </div>

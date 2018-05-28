@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Diagnose extends Model
 {
-    protected $fillable = [
+    protected $fillable = [ //nosaka aizpildāmos laukus
         'name', 
         'description',
         'treatment',
@@ -14,7 +14,7 @@ class Diagnose extends Model
         'user_id',
         
     ];
-
+    //pievieno atkarības
     public function user(){
         return $this->belongsToMany('App\User');
     }

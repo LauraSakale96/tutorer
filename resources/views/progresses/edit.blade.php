@@ -12,7 +12,7 @@
 </head>
 
 <div class="col-sm-9 col-md-9 col-lg-9 pull-left" style="background: white;">
-<h1>Rediģēt nodarbību</h1>
+<h1>Rediģēt progresu</h1>
 
       
       
@@ -20,30 +20,30 @@
 
  
         <div class="col-lg-12 col-md-12 col-sm-12">
-         <form method="post" action="{{ route('lessons.update', [$lesson->id])}}" files="true"> <!-- kā route izsauc lessons.update, kas ir funkcija, kas atļauj atjaunot datus datubāzē -->
+         <form method="post" action="{{ route('progresses.update', [$progress->id])}}" files="true"> <!-- kā route izsauc progresses.update, kas ir funkcija, kas atļauj atjaunot datus datubāzē -->
             {{ csrf_field()}}
 
             <input type="hidden" name="_method" value="put">
             <div class="form-group">
-                <label for="lesson-name">Nodarbības nosaukums<span class="required">*</span></label>
-                <input placeholder="Ievadiet nodarbības nosaukumu"
-                        id="lesson-name"
+                <label for="progress-name">Progress<span class="required">*</span></label>
+                <input placeholder="Progress"
+                        id="progress-name"
                         required
                         name="name"
                         spellcheck="false"
                         class="form-control"
-                        value="{{ $lesson->name }}"/>
+                        value="{{ $progress->name }}"/>
                         
                 </div>
 
                 <div class="form-group">
-                <label for="lesson-lessondate">Nodarbības datums<span class="required">*</span></label>
+                <label for="progress-date">Progresa pieviennošanas datums<span class="required">*</span></label>
                      <input class="date form-control" type="text"
-                     id="lesson-lessondate"
-                    name="lessondate"
+                     id="progress-date"
+                    name="date"
                     spellcheck="false"
                         class="form-control"
-                        value="{{ $lesson->lessondate }}"
+                        value="{{ $progress->date }}"
                     />
                  </div>
 
@@ -57,14 +57,14 @@
                 </script>
 
                 <div class="form-group">
-                <label for="lesson-content">Apraksts</label>
+                <label for="progress-content">Apraksts</label>
                 <textarea placeholder="Ievadiet nodarbības aprakstu"
                         style="resize: vertical"
-                        id="lesson-content"
+                        id="progress-content"
                         name="description"
                         rows="5" spellcheck="false"
                         class="form-control autosize-target text-left">
-                        {{$lesson->description}}
+                        {{$progress->description}}
                         </textarea>
                 </div>
 
@@ -86,10 +86,10 @@
             <ol class="list-unstyled">
               <li>
               <span data-feather="file"></span>
-              <a href="/lessons/{{$lesson->id}}">Apskatīt nodarbību</a></li>
+              <a href="/progresses/{{$progress->id}}">Apskatīt progresu</a></li>
               <li>
               <span data-feather="layers"></span>
-              <a href="/lessons">Visas nodarbības</a></li>
+              <a href="/progresses">Visi pievienotie progresi</a></li>
               
             </ol>
           </div>

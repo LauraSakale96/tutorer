@@ -7,13 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
+    protected $fillable = [ //aizpildāmie lauki
         'name',
         'lastname', 
         'age',
@@ -21,13 +15,23 @@ class Student extends Model
         'user_id',
         'subject_id',
     ];
+    //nosaka atkarības
     public function user(){
-        return $this->belongsToMany('App\User');
+        return $this->belongsTo('App\User');
     }
     public function subject(){
         return $this->belongsTo('App\Subject');
     }
 
+    public function progresses()
+    {
+        return $this->hasMany('App\Progress');
+    }
+
+    public function diagnoses()
+    {
+        return $this->hasMany('App\Diagnose');
+    }
     
     
 }

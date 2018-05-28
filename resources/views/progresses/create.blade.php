@@ -11,7 +11,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 </head>
 <div class="col-sm-9 col-md-9 col-lg-9 pull-left" style=""background: white;>
-<h1>Pievieno jaunu nodarbību</h1>
+<h1>Pievieno progresu</h1>
 
       
       <!-- Example row of columns -->
@@ -19,14 +19,14 @@
 
  
         <div class="col-lg-12 col-md-12 col-sm-12">
-         <form method="post" action="{{ route('lessons.store')}}">
+         <form method="post" action="{{ route('progresses.store')}}">
             {{ csrf_field()}}
 
             
             <div class="form-group">
-                <label for="lesson-name">Nodarbības nosaukums<span class="required">*</span></label>
-                <input placeholder="Ievadiet nodarbības nosaukumu"
-                        id="lesson-name"
+                <label for="progress-name">Progress<span class="required">*</span></label>
+                <input placeholder="Progress"
+                        id="progress-name"
                         required
                         name="name"
                         spellcheck="false"
@@ -38,23 +38,23 @@
                 
 
 
-                @if( $subjects == null)
+                @if( $students == null)
                 <input
                 class="form-control"
                  type="hidden"
                         
-                        name="subject_id"
-                        value="{{$subject_id}}"                     
+                        name="student_id"
+                        value="{{$student_id}}"                     
                         />                      
                 </div>
                 @endif
-
-                @if( $subjects != null) <!-- parāda visus iespējamos priekšmetus, kuriem pievienot nodarbību -->
+    
+                @if( $students != null)
                 <div class="form-group">
-                <label for="subject-content">Izvēlies priekšmetu, kuram pievienot nodarbību<span class="required">*</span></label>
-                <select name="subject_id" class="form-control" style="height:100%">
-                  @foreach($subjects as $subject)
-                    <option value="{{$subject->id}}">{{$subject->name}}</option>
+                <label for="student-content">Izvēlies skolēnu, kuram pievienot progresu</label>
+                <select name="student_id" class="form-control" style="height:100%">
+                  @foreach($students as $student)
+                    <option value="{{$student->id}}">{{$student->name}}  {{$student->lastname}}</option>
                     @endforeach
                 </select>
                 </div>
@@ -64,10 +64,10 @@
                 
 
                 <div class="form-group">
-                <label for="lesson-lessondate">Nodarbības datums<span class="required">*</span></label>
+                <label for="progress-date">Progresa pievienošanas datums<span class="required">*</span></label>
                      <input class="date form-control" type="text"
-                     id="lesson-lessondate"
-                    name="lessondate"
+                     id="progress-date"
+                    name="date"
                     spellcheck="false"
                         class="form-control"
                     />
@@ -79,10 +79,10 @@
                 </script>
                  </div>
                 <div class="form-group">
-                <label for="lesson-content">Apraksts</label>
+                <label for="progress-content">Apraksts</label>
                 <textarea 
                         style="resize: vertical"
-                        id="lesson-content"
+                        id="progress-content"
                         name="description"
                         rows="5" spellcheck="false"
                         class="form-control autosize-target text-left">
@@ -111,7 +111,7 @@
    <ol class="list-unstyled">
      <li>
      <span data-feather="layers"></span>
-     <a href="/lessons">Apskatīt visu manu nodarbību sarakstu</a></li>
+     <a href="/progresses">Apskatīt visu manu pievienotot progresu sarakstu</a></li>
    </ol>
  </div>
   
