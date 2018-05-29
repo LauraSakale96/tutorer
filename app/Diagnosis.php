@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Diagnose extends Model
+class Diagnosis extends Model
 {
     protected $fillable = [ //nosaka aizpildāmos laukus
         'name', 
@@ -16,7 +16,7 @@ class Diagnose extends Model
     ];
     //pievieno atkarības
     public function user(){
-        return $this->belongsToMany('App\User');
+        return $this->belongsTo('App\User');
     }
     public function student(){
         return $this->belongsTo('App\Student');

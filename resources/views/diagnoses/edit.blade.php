@@ -20,70 +20,48 @@
 
  
         <div class="col-lg-12 col-md-12 col-sm-12">
-         <form method="post" action="{{ route('diagnoses.update', [$diagnose->id])}}" files="true">
+         <form method="post" action="{{ route('diagnoses.update', [$diagnosis->id])}}" files="true">
             {{ csrf_field()}}
 
             <input type="hidden" name="_method" value="put">
-            
-            @if( $students == null)
-            <input
-            class="form-control"
-             type="hidden"
-                    
-                    name="student_id"
-                    value="{{$student_id}}"                     
-                    />                      
-            </div>
-            @endif
-
-            @if( $students != null)
-            <div class="form-group">
-            <label for="student-content">Izvēlies skolēnu, kuram pievienot diagnozi</label>
-            <select name="student_id" class="form-control" style="height:100%">
-              @foreach($students as $student)
-                <option value="{{$student->id}}">{{$student->name}} {{$student->lastname}}</option>
-                @endforeach
-            </select>
-            </div>
-            @endif
-
+          
         <div class="form-group">
-            <label for="diagnose-name">Diagnoze:<span class="required">*</span></label>
+            <label for="diagnosis-name">Diagnoze:<span class="required">*</span></label>
             <input placeholder="Ievadiet diagnozi"
-                    id="diagnose-name"
+                    id="diagnosis-name"
                     required
                     name="name"
                     spellcheck="false"
                     class="form-control"
-                    value="{{ $diagnose->name }}"
+                    value="{{ $diagnosis->name }}"
                    
                     />
                     
             </div>
 
             <div class="form-group">
-            <label for="diagnose-content">Apraksts<span class="required">*</span></label>
+            <label for="diagnosis-content">Apraksts<span class="required">*</span></label>
             <textarea 
                     style="resize: vertical"
-                    id="diagnose-content"
+                    id="diagnosis-content"
                     name="description"
                     rows="5" spellcheck="false"
                     class="form-control autosize-target text-left"
-                    value="{{ $diagnose->description }}">
+                    value="{{ $diagnosis->description }}">
                     
                     
                     </textarea>
             </div>
 
             <div class="form-group">
-            <label for="diagnose-content">Ārstēšanas apraksts(ja nepieciešams)</label>
+            <label for="diagnosis-content">Ārstēšanas apraksts(ja nepieciešams)</label>
             <textarea 
                     style="resize: vertical"
-                    id="diagnose-content"
+                    id="diagnosis-content"
                     name="treatment"
                     rows="5" spellcheck="false"
                     class="form-control autosize-target text-left"
-                    value="{{ $diagnose->treatment }}">
+                    value="{{ $diagnosis->treatment }}">
                     
                     </textarea>
             </div>
@@ -110,7 +88,7 @@
             <ol class="list-unstyled">
               <li>
               <span data-feather="thermometer"></span>
-              <a href="/diagnoses/{{$diagnose->id}}">Apskatīt diagnozi</a></li>
+              <a href="/diagnoses/{{$diagnosis->id}}">Apskatīt diagnozi</a></li>
               <li>
               <span data-feather="actiivity"></span>
               <a href="/diagnoses">Visas diagnozes</a></li>

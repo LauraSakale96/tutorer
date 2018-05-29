@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Diagnose;
+use App\Diagnosis;
 use App\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,24 +14,23 @@ class DiagnosesController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'description' => 'string|max:500',
-            'treatment' => 'string|max:1000',
-           
+            'name' => 'required',
+            'description' => 'required', 
+
         ]);
     }
-     //atgriež sarakstu ar visām autorizētā lietotāja pievienotajām diagnozēm
+     //atgriež skatu ar visiem autorizētā lietotāja pievienotajiem skolēniem
     public function index()
     {
         if(Auth::check()){
-        $diagnoses=Diagnose::where('user_id', Auth::user()->id)->get();
+        $diagnoses=Diagnosis::where('user_id', Auth::user()->id)->get();
         return view('diagnoses.index', ['diagnoses'=>$diagnoses]);
         }
         
         return view('auth.login');
     }
 
-   //izveido diagnozi
+    //izveido progresu, ļauj tam piesaistīt skolēnu
     public function create($student_id= null)
     {
         $students = null;
@@ -42,70 +41,73 @@ class DiagnosesController extends Controller
                return view( 'diagnoses.create', ['student_id'=>$student_id, 'students'=>$students]);
     }
 
-    //saglabā datus datubāzē
+    //glabā informāciju datubāzē
     public function store(Request $request)
     {
         if(Auth::check()){
-            $diagnose = Diagnose::create([
+            $diagnosis = Diagnosis::create([
                 'name' => $request->input('name'),
-                'description' => $request->input('description'),
-                'treatment'=>$request->input('treatment'),
+                'description' => $request->input('decription'),
+                'treatment' => $request->input('treatment'),
                 'student_id' => $request->input('student_id'),
                 'user_id' => Auth::user()->id,
                 
             ]);
-            if($diagnose){
-                return redirect()->route('diagnoses.show', ['diagnose'=> $diagnose->id])
-                ->with('success' , 'Diagnoze ir pievienota veiksmīgi');
+            if($diagnosis){
+                return redirect()->route('diagnoses.show', ['diagnosis'=> $diagnosis->id])
+                ->with('success' , 'Diagnoze ir veiksmīgi pievienots!');
             }
         }
         
-            return back()->withInput()->with('errors', 'Neizdevās pievienot jaunu diagnozi');
-    }
-    //atgriež konkrētās diagnozes skatu
-    public function show(Diagnose $diagnose)
-    {
-       
-       $diagnose = Diagnose::find($diagnose->id );
-       
-       return view( 'diagnoses.show', ['diagnose'=>$diagnose]);
-    }
-    //atgriež rediģēšanas skatu
-    public function edit(Diagnose $diagnose)
-    {
-        $diagnose = Diagnose::find($diagnose->id );
-        
-            
-               return view( 'diagnoses.edit', ['diagnose'=>$diagnose]);
+            return back()->withInput()->with('errors', 'Neizdevās pievienot jaunu diagnozi!');
     }
 
-   //atjauno informāciju par diagnozi
-    public function update(Request $request, Diagnose $diagnose)
+    //parāda konkrētā progresa informāciju
+    public function show(Diagnosis $diagnosis)
     {
-        $diagnoseUpdate = Diagnose::where('id', $diagnose->id)
+       
+       $diagnosis = Diagnosis::find($diagnosis->id );
+       return view( 'diagnoses.show', ['diagnosis'=>$diagnosis]);
+    }
+
+   //atgriež progresa rediģēšanas skatu
+    public function edit(Diagnosis $diagnosis)
+    {
+        $diagnosis = Diagnosis::find($diagnosis->id );
+        
+            
+               return view( 'diagnoses.edit', ['diagnosis'=>$diagnosis]);
+    }
+
+   //atjauno informāciju datubāzē
+    public function update(Request $request, Diagnosis $diagnosis)
+    {
+        $diagnosisUpdate = Diagnosis::where('id', $diagnosis->id)
         ->update([
                 'name'=> $request->input('name'),
-                'description'=> $request->input('description'),
-                'treatment'=>$request->input('treatment'),              
+                'description'=> $request->input('desription'),
+                'treatment'=> $request->input('treatment'),
+                
+               
         ]);
-        if($diagnoseUpdate){
-        return redirect()->route('diagnoses.show', ['diagnose'=> $diagnose->id])
-        ->with('success' , 'Diagnoze ir veiksmīgi rediģēta');
+        if($diagnosisUpdate){
+        return redirect()->route('diagnoses.show', ['diagnosis'=> $diagnosis->id])
+        ->with('success' , 'Diagnoze ir veiksmīgi rediģēts');
         }
     }
 
-    //izdzēš konkrētos datus
-    public function destroy(Diagnose $diagnose)
+   //izdzēš progresa informāciju no datubāzes
+    public function destroy(Diagnosis $diagnosis)
     {
         
-        $finddiagnose = Diagnose::find( $diagnose->id);
-		if($finddiagnose->delete()){
+        $finddiagnosis = Diagnosis::find( $diagnosis->id);
+		if($finddiagnosis->delete()){
             
             //redirect
             return redirect()->route('diagnoses.index')
-            ->with('success' , 'Diagnoze veiksmīgi izdzēsta');
+            ->with('success' , 'Diagnoze ir veiksmīgi izdzēsts');
         }
-        return back()->withInput()->with('error' , 'Diagnoze neizdevās dzēst');
+        return back()->withInput()->with('error' , 'Diagnozi neizdevās veiksmīgi izdzēst');
         
     }
 }

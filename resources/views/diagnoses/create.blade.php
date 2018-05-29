@@ -4,11 +4,10 @@
 <head>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet"/>
+  
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 </head>
 <div class="col-sm-9 col-md-9 col-lg-9 pull-left" style=""background: white;>
 <h1>Pievieno diagnozi</h1>
@@ -47,9 +46,9 @@
             </select>
             </div>
             @endif
-                <label for="diagnose-name">Diagnoze:<span class="required">*</span></label>
+                <label for="diagnosis-name">Diagnoze:<span class="required">*</span></label>
                 <input placeholder="Ievadiet diagnozi"
-                        id="diagnose-name"
+                        id="diagnosis-name"
                         required
                         name="name"
                         spellcheck="false"
@@ -62,10 +61,10 @@
                 
 
                 <div class="form-group">
-                <label for="diagnose-content">Apraksts<span class="required">*</span></label>
+                <label for="diagnosis-content">Apraksts<span class="required">*</span></label>
                 <textarea 
                         style="resize: vertical"
-                        id="diagnose-content"
+                        id="diagnosis-content"
                         name="description"
                         rows="5" spellcheck="false"
                         class="form-control autosize-target text-left">
@@ -74,10 +73,10 @@
                 </div>
 
                 <div class="form-group">
-                <label for="diagnose-content">Ārstēšanas apraksts(ja nepieciešams)</label>
+                <label for="diagnosis-content">Ārstēšanas apraksts(ja nepieciešams)</label>
                 <textarea 
                         style="resize: vertical"
-                        id="diagnose-content"
+                        id="diagnosis-content"
                         name="treatment"
                         rows="5" spellcheck="false"
                         class="form-control autosize-target text-left">

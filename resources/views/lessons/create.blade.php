@@ -4,11 +4,11 @@
 <head>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet"/>
+ 
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+ 
 </head>
 <div class="col-sm-9 col-md-9 col-lg-9 pull-left" style=""background: white;>
 <h1>Pievieno jaunu nodarbību</h1>
@@ -65,18 +65,13 @@
 
                 <div class="form-group">
                 <label for="lesson-lessondate">Nodarbības datums<span class="required">*</span></label>
-                     <input class="date form-control" type="text"
+                     <input class="date form-control" type="date"
                      id="lesson-lessondate"
                     name="lessondate"
                     spellcheck="false"
                         class="form-control"
                     />
-                    
-                <script type="text/javascript">
-                    $('.date').datepicker({  
-                    format: 'dd-mm-yyyy'
-                     });  
-                </script>
+                
                  </div>
                 <div class="form-group">
                 <label for="lesson-content">Apraksts</label>

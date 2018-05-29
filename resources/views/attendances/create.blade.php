@@ -4,13 +4,12 @@
 <head>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
 
-
-
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
+  </script>
 </head>
 <div class="col-sm-9 col-md-9 col-lg-9 pull-left" style=""background: white;>
-<h1>Pievieno progresu</h1>
+<h1>Pievieno apmeklējumu</h1>
 
       
       <!-- Example row of columns -->
@@ -18,25 +17,10 @@
 
  
         <div class="col-lg-12 col-md-12 col-sm-12">
-         <form method="post" action="{{ route('progresses.store')}}">
+         <form method="post" action="{{ route('attendances.store')}}">
             {{ csrf_field()}}
 
-            
-            <div class="form-group">
-                <label for="progress-name">Progress<span class="required">*</span></label>
-                <input placeholder="Progress"
-                        id="progress-name"
-                        required
-                        name="name"
-                        spellcheck="false"
-                        class="form-control"
-                       
-                        />
-                        
-                </div>
-                
-
-
+      
                 @if( $students == null)
                 <input
                 class="form-control"
@@ -50,7 +34,7 @@
     
                 @if( $students != null)
                 <div class="form-group">
-                <label for="student-content">Izvēlies skolēnu, kuram pievienot progresu</label>
+                <label for="student-content">Izvēlies skolēnu, kuram pievienot apmeklējumu</label>
                 <select name="student_id" class="form-control" style="height:100%">
                   @foreach($students as $student)
                     <option value="{{$student->id}}">{{$student->name}}  {{$student->lastname}}</option>
@@ -63,26 +47,23 @@
                 
 
                 <div class="form-group">
-                <label for="progress-date">Progresa pievienošanas datums<span class="required">*</span></label>
+                <label for="attendance-date">Apmeklējuma datums<span class="required">*</span></label>
                      <input class="date form-control" type="date"
-                     id="progress-date"
+                     id="attendance-date"
                     name="date"
                     spellcheck="false"
                         class="form-control"
                     />
+                    
                 
                  </div>
+
                 <div class="form-group">
-                <label for="progress-content">Apraksts</label>
-                <textarea 
-                        style="resize: vertical"
-                        id="progress-content"
-                        name="description"
-                        rows="5" spellcheck="false"
-                        class="form-control autosize-target text-left">
-                        
-                        </textarea>
+                <label for="attendance-attendance">Vai ir apmeklējis?<span class="required">*</span></label>
+                   <label>Apmeklēja:</label> <input type="radio" name="attendance" value="1" checked>
+                    <label>Neapmeklēja:</label><input type="radio" name="attendance" value="0">
                 </div>
+
 
                 
                 
@@ -105,7 +86,7 @@
    <ol class="list-unstyled">
      <li>
      <span data-feather="layers"></span>
-     <a href="/progresses">Apskatīt visu manu pievienotot progresu sarakstu</a></li>
+     <a href="/attendances">Apskatīt visu manu pievienotot apmeklējumu sarakstu</a></li>
    </ol>
  </div>
   

@@ -17,8 +17,8 @@
     <div class="panel-body">
 
         <ul class="list-group">
-        @foreach($diagnoses as $diagnose)
-        <li class="list-group-item"> <a href="/diagnoses/{{$diagnose->id}}">{{ $diagnose->name}}</a></li>
+        @foreach($diagnoses as $diagnosis)
+        <li class="list-group-item"> <a href="/diagnoses/{{$diagnosis->id}}">{{ $diagnosis->name}}</a></li>
         @endforeach
         </ul>
     </div>

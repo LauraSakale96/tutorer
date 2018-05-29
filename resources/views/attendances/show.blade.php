@@ -12,13 +12,13 @@
 
       
       <div class="jumbotron">
-        <h1>Diagnoze: {{ $diagnosis->name }}</h1>
-        <p>Diagnozes apraksts : {{ $diagnosis->description }}</p>
-        @if($diagnosis->treatment)
-        <p>Ārstēšanas apraksts :{{ $diagnosis->treatment }}</p>
+        <h1>{{ $attendance->date }}</h1>
+        @if($attendance->attendance == 0)
+        <p class="lead">Neapmeklēja</p>
         @endif
-       
-        
+        @if($attendance->attendance == 1)
+        <p class="lead">Apmeklēja</p>
+        @endif
       
       </div>
 
@@ -32,22 +32,22 @@
             <ol class="list-unstyled">
               <li>
               <span data-feather="edit"></span>
-              <a href="/diagnoses/{{$diagnosis->id}}/edit">Rediģēt</a></li>
+              <a href="/attendances/{{$attendance->id}}/edit">Rediģēt</a></li>
               <li>
               <span data-feather="plus-circle"></span>
-              <a href="/diagnoses/create">Pievienot jaunu diagnozi</a></li>
+              <a href="/attendances/create">Pievienot jaunu apmeklējumu</a></li>
               <li>
               <span data-feather="layers"></span>
-              <a href="/diagnoses">Saraksts ar visām diagnozēm</a></li>
+              <a href="/attendances">Saraksts ar visiem apmeklējumiem</a></li>
               
               <br/>
-              @if($diagnosis->user_id == Auth::user()->id)
+              @if($attendance->user_id == Auth::user()->id)
               <li>
               <span data-feather="delete"></span>
               <a   
               href="#"
                   onclick="
-                  var result = confirm('Vai tiešām vēlaties izdzēst šo diagnozi?');
+                  var result = confirm('Vai tiešām vēlaties izdzēst šo apmeklējumu?');
                       if( result ){
                               event.preventDefault();
                               document.getElementById('delete-form').submit();
@@ -57,7 +57,7 @@
                   Dzēst
               </a>
 
-              <form id="delete-form" action="{{ route('diagnoses.destroy',[$diagnosis->id]) }}" 
+              <form id="delete-form" action="{{ route('attendances.destroy',[$attendance->id]) }}" 
                 method="POST" style="display: none;">
                         <input type="hidden" name="_method" value="delete">
                         {{ csrf_field() }}

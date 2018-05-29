@@ -30,7 +30,11 @@ class Student extends Model
 
     public function diagnoses()
     {
-        return $this->hasMany('App\Diagnose');
+        return $this->hasOne('App\Diagnosis');
+    }
+    public function attendances()
+    {
+        return $this->hasMany('App\Attendance');
     }
     
     
