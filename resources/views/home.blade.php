@@ -15,7 +15,7 @@
       <div class="jumbotron float:right">
         <div class="container float:right">
           <h2 class="display-2">TUTORER- palīgs pašapmācības skolotājiem!</h2>
-          <p>Tutorer ir palīgs pašapmācības skolotājiem. Kur tie var pievienot visus priekšmetus, kurus tie pasniedz. Pievienot noteiktajiem priekšmetiem nodarbības. Pievienot mācību materiālus un glabāt tos vienuviet!  </p>
+          <p>Tutorer ir palīgs pašapmācības skolotājiem. Kur tie var pievienot visus priekšmetus, kurus tie pasniedz. Pievienot noteiktajiem priekšmetiem nodarbības. Sekot līdzi studentu progresam un apmeklējumam! </p>
           <p><a class="btn btn-primary btn-lg" href="http://tutorer.dev/info" role="button">Uzzini vairāk! &raquo;</a></p>
         </div>
       </div>
@@ -26,7 +26,7 @@
             <h2>Profils</h2>
             <p>Izveido savu profilu, kur vari norādīt visu svarīgāko iznformāciju par sevi.</p>
             
-              <p><a class="btn btn-secondary" href="http://tutorer.dev/teacherprofiles" role="button">Apskati savu profilu &raquo;</a></p>
+              <p><a class="btn btn-secondary" href="http://tutorer.dev/profile" role="button">Apskati savu profilu &raquo;</a></p>
           
 
           </div>
