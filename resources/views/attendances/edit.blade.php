@@ -10,7 +10,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 </head>
-
+@if($attendance->user_id == Auth::user()->id)
 <div class="col-sm-9 col-md-9 col-lg-9 pull-left" style="background: white;">
 <h1>Rediģēt apmeklējumu</h1>
 
@@ -73,4 +73,5 @@
           
           
         </div>
+        @endif
     @endsection

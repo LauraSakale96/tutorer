@@ -10,7 +10,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 </head>
-
+@if($diagnosis->user_id == Auth::user()->id)
 <div class="col-sm-9 col-md-9 col-lg-9 pull-left" style="background: white;">
 <h1>Rediģēt diagnozi</h1>
 
@@ -78,11 +78,7 @@
 </div>
 
 <div class="col-sm-3 col-md-3 col-lg-3 pull-right">
-         <!-- <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div>
-          <div class="sidebar-module">-->
+         
           <div class="sidebar-module">
             <h4>Ivēlieties savu darbību</h4>
             <ol class="list-unstyled">
@@ -98,4 +94,5 @@
           
           
         </div>
+        @endif
     @endsection

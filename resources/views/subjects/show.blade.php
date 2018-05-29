@@ -7,7 +7,7 @@
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
   </head>
-
+  @if($subject->user_id == Auth::user()->id)
 <div class="col-sm-6 col-md-6 col-lg-6 pull-center">
 
       
@@ -68,5 +68,6 @@
           </div>
            
         </div>
+        @endif
 
     @endsection

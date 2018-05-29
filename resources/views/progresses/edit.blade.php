@@ -8,7 +8,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
 </head>
-
+@if($progress->user_id == Auth::user()->id)
 <div class="col-sm-9 col-md-9 col-lg-9 pull-left" style="background: white;">
 <h1>Rediģēt progresu</h1>
 
@@ -94,4 +94,5 @@
           
           
         </div>
+        @endif
     @endsection

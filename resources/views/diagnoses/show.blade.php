@@ -7,7 +7,7 @@
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
   </head>
-
+  @if($diagnosis->user_id == Auth::user()->id)
 <div class="col-sm-9 col-md-9 col-lg-9 pull-center">
 
       
@@ -42,7 +42,7 @@
               <a href="/diagnoses">Saraksts ar visām diagnozēm</a></li>
               
               <br/>
-              @if($diagnosis->user_id == Auth::user()->id)
+              
               <li>
               <span data-feather="delete"></span>
               <a   
@@ -68,10 +68,11 @@
               
               
               </li>
-            @endif
+           
             </ol>
           </div>
          
           
         </div>
+        @endif
     @endsection

@@ -17,6 +17,9 @@
       <!-- Example row of columns -->
       <div class="row" style="background:white; margin: 10px;">
 
+    <div class="alert alert-warning">
+        <strong>Svarīgi!</strong> Ja vēlaties neatklāt skolēna vārdu un uzvārdu, personas datu drošības dēļ, varat to vietā ievadīt sev zināmus skolēna identifikatorus!
+    </div>
  
         <div class="col-lg-12 col-md-12 col-sm-12">
          <form method="post" action="{{ route('students.store')}}">
