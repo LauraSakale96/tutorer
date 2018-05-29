@@ -12,7 +12,8 @@
 
       
       <div class="jumbotron">
-        <h1>Diagnoze: {{ $diagnosis->name }}</h1>
+      <h1>Skolēns : {{$diagnosis->student->name}} {{$diagnosis->student->lastname}}</h1>
+        <h2>Diagnoze: {{ $diagnosis->name }}</h2>
         <p>Diagnozes apraksts : {{ $diagnosis->description }}</p>
         @if($diagnosis->treatment)
         <p>Ārstēšanas apraksts :{{ $diagnosis->treatment }}</p>

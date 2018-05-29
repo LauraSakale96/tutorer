@@ -18,7 +18,7 @@
 
         <ul class="list-group">
         @foreach($lessons as $lesson)
-        <li class="list-group-item"> <a href="/lessons/{{$lesson->id}}">{{ $lesson->name}}, {{ $lesson->lessondate}}</a></li>
+        <li class="list-group-item"> <a href="/lessons/{{$lesson->id}}">{{ $lesson->name}}, {{ $lesson->lessondate}}  ({{$lesson->subject->name}})</a></li>
         @endforeach
         </ul>
     </div>

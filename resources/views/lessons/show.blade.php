@@ -15,6 +15,7 @@
         <h1>{{ $lesson->name }}</h1>
         <p class="lead">{{ $lesson->description}}</p>
         <p class="lead">{{ $lesson->lessondate}}</p>
+        <p class="lead">Priekšmets, kuram nodarbības pieder -{{$lesson->subject->name}}</p>
       </div>
 
      

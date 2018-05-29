@@ -18,7 +18,7 @@
 
         <ul class="list-group">
         @foreach($diagnoses as $diagnosis)
-        <li class="list-group-item"> <a href="/diagnoses/{{$diagnosis->id}}">{{ $diagnosis->name}}</a></li>
+        <li class="list-group-item"> <a href="/diagnoses/{{$diagnosis->id}}">{{$diagnosis->student->name}} {{$diagnosis->student->lastname}} - {{ $diagnosis->name}}</a></li>
         @endforeach
         </ul>
     </div>

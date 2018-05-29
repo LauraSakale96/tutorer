@@ -18,7 +18,7 @@
 
         <ul class="list-group">
         @foreach($progresses as $progress)
-        <li class="list-group-item"> <a href="/progresses/{{$progress->id}}">{{ $progress->name}}, {{ $progress->date}} </a></li>
+        <li class="list-group-item"> <a href="/progresses/{{$progress->id}}">{{$progress->student->name}} {{$progress->student->lastname}} - {{ $progress->name}}, {{ $progress->date}} </a></li>
         @endforeach
         </ul>
     </div>

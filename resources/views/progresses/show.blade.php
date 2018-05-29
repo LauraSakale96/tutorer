@@ -12,7 +12,8 @@
 
       
       <div class="jumbotron">
-        <h1>{{ $progress->name }}</h1>
+        <h1>{{$progress->student->name}} {{$progress->student->lastname}} </h1>
+        <h2>{{ $progress->name }}</h2>
         <p class="lead">{{ $progress->description}}</p>
         <p class="lead">{{ $progress->date}}</p>
       </div>

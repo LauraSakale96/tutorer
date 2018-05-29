@@ -12,7 +12,8 @@
 
       
       <div class="jumbotron">
-        <h1>{{ $attendance->date }}</h1>
+        <h1>{{$attendance->student->name}} {{$attendance->student->lastname}}</h1>
+        <h2>{{ $attendance->date }}</h2>
         @if($attendance->attendance == 0)
         <p class="lead">Neapmeklēja</p>
         @endif

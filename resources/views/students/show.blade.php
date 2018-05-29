@@ -36,6 +36,7 @@
         @if($student->gender== 'none')
 
         @endif
+        <p class="lead"> Priekšmets, kuru apmeklē : {{$student->subject->name}}</p>
         
       
       </div>
