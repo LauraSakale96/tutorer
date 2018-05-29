@@ -14,8 +14,8 @@ class ProgressesController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:100',
-            'description' => 'required|string|max:100',
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:500',
             'date' => 'required',
             
             

@@ -17,7 +17,7 @@ class LessonsController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'string|max:1000',
             //'file.*' => 'mimes:doc,pdf,docx,zip',
-            'lessondate' => 'required|max:255',
+            'lessondate' => 'required',
             
         ]);
     }

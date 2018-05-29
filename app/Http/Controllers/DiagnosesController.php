@@ -14,8 +14,9 @@ class DiagnosesController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required',
-            'description' => 'required', 
+            'name' => 'required|max:255',
+            'description' => 'required|max:500',
+            'treatment' => 'max:1000' 
 
         ]);
     }
