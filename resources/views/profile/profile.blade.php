@@ -11,7 +11,7 @@
                 @if($user->description)
                 <p> Apraksts : {{$user->description}}</p>
                 @endif
-                @if($user->user_id == Auth::user()->id)
+                
                 <form enctype="multipart/form-data" action="/profile" method="POST">
                 <label>Nomaini Profila Bildi</label>
                 <input type="file" name="image">
@@ -19,7 +19,7 @@
                 <input type="submit" class="btn btn-primary"
                         value="Ievadīt"/>
                 </form>
-                @endif
+                
      </div>
 </div>
 

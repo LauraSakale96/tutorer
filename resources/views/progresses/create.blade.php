@@ -73,7 +73,7 @@
                 
                  </div>
                 <div class="form-group">
-                <label for="progress-content">Apraksts</label>
+                <label for="progress-content">Apraksts<span class="required">*</span></label>
                 <textarea 
                         style="resize: vertical"
                         id="progress-content"

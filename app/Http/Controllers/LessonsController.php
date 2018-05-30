@@ -73,7 +73,7 @@ class LessonsController extends Controller
 
        return view( 'lessons.show', ['lesson'=>$lesson]);
     }
-    //atgriež skolēna rediģēšanas skatu
+    //atgriež nodarbības rediģēšanas skatu
     public function edit(Lesson $lesson)
     {
         $lesson = Lesson::find($lesson->id );
@@ -81,7 +81,7 @@ class LessonsController extends Controller
                return view( 'lessons.edit', ['lesson'=>$lesson]);
     }
 
-    //atjauno skolēna informāciju
+    //atjauno nodarbības informāciju
     public function update(Request $request, Lesson $lesson)
     {
         $lessonUpdate = Lesson::where('id', $lesson->id)
@@ -97,7 +97,7 @@ class LessonsController extends Controller
         }
     }
 
-    //izdzēš skolēna informāciju
+    //izdzēš nodarbības informāciju
     public function destroy(Lesson $lesson)
     {
         

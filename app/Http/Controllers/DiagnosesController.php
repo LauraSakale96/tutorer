@@ -48,7 +48,7 @@ class DiagnosesController extends Controller
         if(Auth::check()){
             $diagnosis = Diagnosis::create([
                 'name' => $request->input('name'),
-                'description' => $request->input('decription'),
+                'description' => $request->input('description'),
                 'treatment' => $request->input('treatment'),
                 'student_id' => $request->input('student_id'),
                 'user_id' => Auth::user()->id,
