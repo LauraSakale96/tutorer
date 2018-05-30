@@ -29,11 +29,11 @@ class AttendancesController extends Controller
         return view('auth.login');
     }
 
-    //izveido progresu, ļauj tam piesaistīt skolēnu
+    //izveido apmeklējumu, ļauj tam piesaistīt skolēnu
     public function create($student_id= null)
     {
         $students = null;
-            if (!$student_id){  //ļauj attēlot visus studentus, lai varētu parādīt sarakstu un izvēlēties, kuram skolēnam pievienot diagnozi
+            if (!$student_id){  //ļauj attēlot visus studentus, lai varētu parādīt sarakstu un izvēlēties, kuram skolēnam pievienot apmeklējumu
 
                 $students = Student::where('user_id', Auth::user()->id)->get();
             }     
@@ -60,7 +60,7 @@ class AttendancesController extends Controller
             return back()->withInput()->with('errors', 'Neizdevās pievienot jaunu apmeklējumu!');
     }
 
-    //parāda konkrētā progresa informāciju
+    //parāda konkrētā apmeklējuma informāciju
     public function show(Attendance $attendance)
     {
        
@@ -68,7 +68,7 @@ class AttendancesController extends Controller
        return view( 'attendances.show', ['attendance'=>$attendance]);
     }
 
-   //atgriež progresa rediģēšanas skatu
+   //atgriež apmeklējuma rediģēšanas skatu
     public function edit(Attendance $attendance)
     {
         $attendance = Attendance::find($attendance->id );
@@ -93,7 +93,7 @@ class AttendancesController extends Controller
         }
     }
 
-   //izdzēš progresa informāciju no datubāzes
+   //izdzēš apmeklējuma informāciju no datubāzes
     public function destroy(Attendance $attendance)
     {
         

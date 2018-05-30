@@ -20,7 +20,7 @@ class DiagnosesController extends Controller
 
         ]);
     }
-     //atgriež skatu ar visiem autorizētā lietotāja pievienotajiem skolēniem
+     //atgriež skatu ar visiem autorizētā lietotāja pievienotajiem diagnozēm
     public function index()
     {
         if(Auth::check()){
@@ -31,7 +31,7 @@ class DiagnosesController extends Controller
         return view('auth.login');
     }
 
-    //izveido progresu, ļauj tam piesaistīt skolēnu
+    //izveido diagnozi, ļauj tam piesaistīt skolēnu
     public function create($student_id= null)
     {
         $students = null;
@@ -63,7 +63,7 @@ class DiagnosesController extends Controller
             return back()->withInput()->with('errors', 'Neizdevās pievienot jaunu diagnozi!');
     }
 
-    //parāda konkrētā progresa informāciju
+    //parāda konkrētās diagnozes informāciju
     public function show(Diagnosis $diagnosis)
     {
        
@@ -71,7 +71,7 @@ class DiagnosesController extends Controller
        return view( 'diagnoses.show', ['diagnosis'=>$diagnosis]);
     }
 
-   //atgriež progresa rediģēšanas skatu
+   //atgriež diagnozes rediģēšanas skatu
     public function edit(Diagnosis $diagnosis)
     {
         $diagnosis = Diagnosis::find($diagnosis->id );
@@ -97,7 +97,7 @@ class DiagnosesController extends Controller
         }
     }
 
-   //izdzēš progresa informāciju no datubāzes
+   //izdzēš diagnozes informāciju no datubāzes
     public function destroy(Diagnosis $diagnosis)
     {
         

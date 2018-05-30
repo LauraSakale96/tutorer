@@ -21,7 +21,7 @@ class ProgressesController extends Controller
             
         ]);
     }
-     //atgriež skatu ar visiem autorizētā lietotāja pievienotajiem skolēniem
+     //atgriež skatu ar visiem autorizētā lietotāja pievienotajiem progresiem
     public function index()
     {
         if(Auth::check()){

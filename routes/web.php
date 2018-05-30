@@ -32,7 +32,7 @@ Route::middleware(['auth'])->group( function(){
     Route::resource('file', 'FilesController');
     Route::get('profile', 'UserController@profile');
     Route::post('profile', 'UserController@update_image');
-    //Route::get('profile/edit', 'UserController@edit');
+    
     
 
 });
